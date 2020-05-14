@@ -2,14 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import Sidebar from './sidebar';
-import Menu from './menu';
-import Menu2 from './menu';
+import App from './App';
+import FrontC from './frontC';
 
 ReactDOM.render(
   <React.StrictMode>
-    "テスト"
-    <Menu2 />
+     {/* <App /> */}
+    <FrontC />
   </React.StrictMode>,
   document.getElementById('root')
 );
