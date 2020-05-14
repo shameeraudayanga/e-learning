@@ -8,9 +8,9 @@ import Menu2 from './menu';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router></Router>
+    {/* <Router></Router> */}
     {/* <App /> */}
-    <Sidebar />
+    {/* <Sidebar /> */}
     <Menu2 />
   </React.StrictMode>,
   document.getElementById('root')
