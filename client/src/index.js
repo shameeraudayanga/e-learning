@@ -9,6 +9,7 @@ import Menu2 from './menu';
 
 ReactDOM.render(
   <React.StrictMode>
+    <Router></Router>
     {/* <App /> */}
     <Sidebar />
     <Menu2 />
