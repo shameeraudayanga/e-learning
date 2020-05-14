@@ -5,11 +5,13 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Sidebar from './sidebar';
 import Menu from './menu';
+import Menu2 from './menu';
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
     <Sidebar />
+    <Menu2 />
   </React.StrictMode>,
   document.getElementById('root')
 );
