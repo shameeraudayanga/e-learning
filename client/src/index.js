@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Sidebar from './sidebar';
+import Menu from './menu';
 
 ReactDOM.render(
   <React.StrictMode>
