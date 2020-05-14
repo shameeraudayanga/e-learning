@@ -26,7 +26,7 @@ export const getData =
       "contents_id":1,
       "contents_detail_id":3,
       "contents_name":"",
-      "contents_statement":"個人情報とは何を指すか。下記の4つの中から選びなさい③．",
+      "contents_statement":"./image/slide1.jpg",
       "choice1":"名前",
       "choice2":"FAX番号",
       "choice3":"郵便番号",

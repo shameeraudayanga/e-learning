@@ -50,7 +50,9 @@ const Selection = () => {
   const current_choice4 = current_data.map((data) => (
                             <li key={data.contents_detail_id}>{data.choice4}</li>
                           ));
-
+  const img = current_data.map((data) => (
+                            <li key={data.contents_detail_id}>{data.contents_statement}</li>
+                          ));
 
   return (
     <div>
@@ -63,6 +65,7 @@ const Selection = () => {
         {current_data.map((data) => (
           <li key={data.contents_detail_id}>{data.contents_statement}</li>
         ))}
+        <div style={{backgroundImage:{img}}}>{img}</div>
       </Typography>
       <Pagination count={getData.length} page={page} onChange={handleChange} />
     </div>
