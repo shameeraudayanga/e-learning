@@ -89,7 +89,7 @@ export default function PersistentDrawerLeft() {
   const [open, setOpen] = React.useState(true);
 
   const Slider_data = getData.filter((UserData) => {
-    return UserData.CustomerName === "testuser";
+    return UserData.CustomerID === 1;
   })
 
   const handleDrawerOpen = () => {
@@ -102,7 +102,7 @@ export default function PersistentDrawerLeft() {
 
   return (
     <div className={classes.root}>
-      {/* <CssBaseline /> */}
+      <CssBaseline />
       {/* <AppBar
         position="fixed"
         className={clsx(classes.appBar, {
@@ -110,7 +110,7 @@ export default function PersistentDrawerLeft() {
         })}
       > */}
         <Toolbar>
-          <IconButton //メニューボタン三
+          <IconButton
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
@@ -135,39 +135,17 @@ export default function PersistentDrawerLeft() {
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </div>
-        {/* <Divider />
-        {/* <List>
-          <Link to="" style={{boxShadow:'none',textDecoration:'none',color:'inherit',fontFamily:'Montserrat, sans-serif'}}>
-            <ListItem button>
-              <ListItemIcon><AppsIcon /></ListItemIcon>
-              <ListItemText primary="メニュー" />
-            </ListItem>
-          </Link>
-        </List> */}
-        {/* <Divider /> */}
         <List>
-          {/* <Link to="/slide" style={{boxShadow:'none',textDecoration:'none',color:'inherit',fontFamily:'Montserrat, sans-serif'}}>
-            <ListItem button>
-              <ListItemIcon><SlideshowIcon /></ListItemIcon>
-              <ListItemText primary="個人情報研修" />
-            </ListItem>
-          </Link>
-          <Link to="/slide" style={{boxShadow:'none',textDecoration:'none',color:'inherit',fontFamily:'Montserrat, sans-serif'}}>
-            <ListItem button>
-              <ListItemIcon><CreateIcon /></ListItemIcon>
-              <ListItemText primary="個人情報テスト" />
-             </ListItem>
-          </Link> */}
           {Slider_data.map((UserData) => (
           <ListItem button>
           <ListItemIcon><ImportContactsIcon /></ListItemIcon>
-            <li key = {UserData.CustomerName}>{UserData.CurriculumName}</li>
+            <li key = {UserData.CustomerID}>{UserData.CurriculumName}</li>
             </ListItem>
           ))}
           {Slider_data.map((UserData) => (
           <ListItem button>
               <ListItemIcon><CreateIcon /></ListItemIcon>
-              <li key = {UserData.CustomerName}>{UserData.TestName}</li>
+              <li key = {UserData.CustomerID}>{UserData.TestName}</li>
             </ListItem>
             ))}
         </List>
@@ -178,7 +156,7 @@ export default function PersistentDrawerLeft() {
         })}
       >
         <div className={classes.drawerHeader} />
-        {/* <Route path="/s-001" component={S-001} /> */}
+        {/* <Route path="/slide" component={Slide} /> */}
       </main>
     </div>
   );

@@ -7,8 +7,7 @@ const App = () => {
   return (
     <Route>
       <Sidebar />
-      <Route path="/slide" component={Slide} />
-      <Redirect from="/" to="/" />
+      <Redirect from="/" to="/slide" />
     </Route>
   );
 
