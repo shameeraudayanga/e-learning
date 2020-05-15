@@ -1,0 +1,1 @@
+SELECT C1.contents_id , contents_detail_id , contents_statement , choice1 , choice2 , choice3 , choice4 , answer FROM learning.m_contents_detail AS C1 JOIN m_contents AS C2 ON C1.contents_id = C2.contents_id WHERE C2.contents_type = 2 and C1.contents_id = 2 ORDER BY contents_detail_id;

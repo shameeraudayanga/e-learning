@@ -1,15 +1,29 @@
 const express = require('express');
 const app = express();
-const bodyParser = require('bodyParser');
+const bodyParser = require('body-Parser');
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+
 exports.question2 = (req,res) => {
-    const sql = require('SQL/question2.txt');
-    con.query(sql,(err, result, fields) => {
-        if (err) throw err;
-        res.json(result);
+    const mysql = require('mysql');
+
+    const con = mysql.createConnection({
+      host: 'localhost',
+      user: 'root',
+      password: ''
     });
 
+    con.connect((err) => {
+        if (err) throw err;
+        console.log('Connected!');
+    
+
+        const sql = require(',/Api/question2.txt');
+        con.query(sql,(err, result, fields) => {
+        if (err) throw err;
+        res.json(result);
+        });
+    });
 }
