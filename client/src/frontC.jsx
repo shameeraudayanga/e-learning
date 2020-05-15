@@ -22,13 +22,14 @@ const useStyles = makeStyles((theme) => ({
 const Selection = () => {
   const [page, setPage] = React.useState(1);
   const [correctness,setCorrectness] = useState("");
-  // const answer = getData.map((data) => (<li key={data.contents_detail_id}>{data.answer}</li>));
-  const answer = 3;
-  const [btnColor, setBtnColor] = useState("");
+
+  const current_data = getData.filter((data) => {
+    return data.contents_detail_id === page;
+  });
+  const answer = current_data.map((data) => (<li key={data.contents_detail_id}>{data.answer}</li>));
 
   const handleClick = (e,selected) => {
-    // setBtnColor({classes.Buttocolor:"primary"});
-    if (selected == answer) {
+    if (selected == answer[0].props.children) {
       setCorrectness("正解です");
     } else {
       setCorrectness("不正解です");
@@ -39,9 +40,7 @@ const Selection = () => {
     setPage(value);
   };
 
-  const current_data = getData.filter((data) => {
-    return data.contents_detail_id === page;
-  });
+
 
   const current_choice1 = current_data.map((data) => (
                             <li key={data.contents_detail_id}>{data.choice1}</li>
