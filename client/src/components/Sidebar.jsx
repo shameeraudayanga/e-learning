@@ -19,6 +19,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import CreateIcon from '@material-ui/icons/Create';
 import SlideshowIcon from '@material-ui/icons/Slideshow';
 import AppsIcon from '@material-ui/icons/Apps';
+import {getData} from '../variables/UserData';
+import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 
 import Slide from '../Slide';
 
@@ -28,20 +30,20 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
   },
-  appBar: {
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-  },
-  appBarShift: {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: drawerWidth,
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  },
+  // appBar: {
+  //   transition: theme.transitions.create(['margin', 'width'], {
+  //     easing: theme.transitions.easing.sharp,
+  //     duration: theme.transitions.duration.leavingScreen,
+  //   }),
+  // },
+  // appBarShift: {
+  //   width: `calc(100% - ${drawerWidth}px)`,
+  //   marginLeft: drawerWidth,
+  //   transition: theme.transitions.create(['margin', 'width'], {
+  //     easing: theme.transitions.easing.easeOut,
+  //     duration: theme.transitions.duration.enteringScreen,
+  //   }),
+  // },
   menuButton: {
     marginRight: theme.spacing(2),
   },
@@ -85,6 +87,10 @@ export default function PersistentDrawerLeft() {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
+
+  const Slider_data = getData.filter((UserData) => {
+    return UserData.CustomerName === "testuser";
+  })
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -140,7 +146,7 @@ export default function PersistentDrawerLeft() {
         </List> */}
         {/* <Divider /> */}
         <List>
-          <Link to="/slide" style={{boxShadow:'none',textDecoration:'none',color:'inherit',fontFamily:'Montserrat, sans-serif'}}>
+          {/* <Link to="/slide" style={{boxShadow:'none',textDecoration:'none',color:'inherit',fontFamily:'Montserrat, sans-serif'}}>
             <ListItem button>
               <ListItemIcon><SlideshowIcon /></ListItemIcon>
               <ListItemText primary="個人情報研修" />
@@ -151,7 +157,19 @@ export default function PersistentDrawerLeft() {
               <ListItemIcon><CreateIcon /></ListItemIcon>
               <ListItemText primary="個人情報テスト" />
              </ListItem>
-          </Link>
+          </Link> */}
+          {Slider_data.map((UserData) => (
+          <ListItem button>
+          <ListItemIcon><ImportContactsIcon /></ListItemIcon>
+            <li key = {UserData.CustomerName}>{UserData.CurriculumName}</li>
+            </ListItem>
+          ))}
+          {Slider_data.map((UserData) => (
+          <ListItem button>
+              <ListItemIcon><CreateIcon /></ListItemIcon>
+              <li key = {UserData.CustomerName}>{UserData.TestName}</li>
+            </ListItem>
+            ))}
         </List>
       </Drawer>
       <main
