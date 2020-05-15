@@ -1,27 +1,58 @@
 export const getData =
   [
     {
-      "CustomerID":1,
-      "CustomerCode":"3001",
-      "CustomerName":"株式会社ノア",
-      "Address":"札幌市中央区",
-      "CustomerClassID":2,
-      "PrefecturalID":1
+      "contents_id":1,
+      "contents_detail_id":1,
+      "contents_name":"Question1",
+      "contents_startment":"aaaaa",
+      "choice1":"氏名",
+      "choice2":"電話番号",
+      "choice3":"住所",
+      "choice4":"勤務先",
+      "answer":3
     },
     {
-      "CustomerID":2,
-      "CustomerCode":"3002",
-      "CustomerName":"株式会社JTB北海道",
-      "Address":"札幌市中央区",
-      "CustomerClassID":2,
-      "PrefecturalID":1
+      "contents_id":1,
+      "contents_detail_id":2,
+      "contents_name":"Question2",
+      "contents_startment":"bbbbb",
+      "choice1":"名前",
+      "choice2":"FAX番号",
+      "choice3":"郵便番号",
+      "choice4":"職場",
+      "answer":3
     },
     {
-      "CustomerID":3,
-      "CustomerCode":"3003",
-      "CustomerName":"国分株式会社",
-      "Address":"仙台市泉区",
-      "CustomerClassID":2,
-      "PrefecturalID":4
+      "contents_id":1,
+      "contents_detail_id":3,
+      "contents_name":"Question3",
+      "contents_startment":"ccccc",
+      "choice1":"氏名",
+      "choice2":"電話番号",
+      "choice3":"住所",
+      "choice4":"勤務先",
+      "answer":3
+    },
+    {
+      "contents_id":1,
+      "contents_detail_id":4,
+      "contents_name":"Question4",
+      "contents_startment":"ddddd",
+      "choice1":"氏名",
+      "choice2":"電話番号",
+      "choice3":"住所",
+      "choice4":"勤務先",
+      "answer":3
+    },
+    {
+      "contents_id":1,
+      "contents_detail_id":5,
+      "contents_name":"Question5",
+      "contents_startment":"eeeee",
+      "choice1":"氏名",
+      "choice2":"電話番号",
+      "choice3":"住所",
+      "choice4":"勤務先",
+      "answer":3
     }
   ];
