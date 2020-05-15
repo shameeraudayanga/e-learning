@@ -1,0 +1,1 @@
+SELECT contents_id, contents_detail_id, contents_statement, choice1, choice2, choice3, choice4, answer FROM test.m_contents_detail WHERE contents_id = 1 ORDER BY contents_detail_id;
