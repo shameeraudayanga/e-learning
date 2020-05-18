@@ -20,7 +20,7 @@ exports.question2 = (req,res) => {
         console.log('Connected!');
     
 
-        const sql = require(',/Api/question2.txt');
+        const sql = require('./Api/question2.txt');
         con.query(sql,(err, result, fields) => {
         if (err) throw err;
         res.json(result);
