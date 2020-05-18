@@ -20,8 +20,7 @@ exports.slidescreen = (req, res) => {
     if (err) throw err;
     console.log('Connected!');
 
-    const sql = <require className="slide"></require>;
-    const sql = <require className="username"></require>;
+    const sql ='select contents_name ,contents_statement from e_learning.m_contents_detail where contents_id = 4';
     con.query(sql, (err, result, fields) => {
       if (err) throw err;
       res.json(result);
