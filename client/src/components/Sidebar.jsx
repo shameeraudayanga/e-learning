@@ -19,10 +19,12 @@ import ListItemText from '@material-ui/core/ListItemText';
 import CreateIcon from '@material-ui/icons/Create';
 import SlideshowIcon from '@material-ui/icons/Slideshow';
 import AppsIcon from '@material-ui/icons/Apps';
-import {Sidebar} from '../variables/Usermenu';
-import { Slide } from '@material-ui/core';
+import { getData } from '../variables/UserData';
+import { Slide, Slider } from '@material-ui/core';
+import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 
 const drawerWidth = 240;
+const drawertop = 72;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -50,9 +52,11 @@ const useStyles = makeStyles((theme) => ({
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
+    top: drawertop,
   },
   drawerPaper: {
     width: drawerWidth,
+    top: drawertop,
   },
   drawerHeader: {
     display: 'flex',
@@ -89,6 +93,9 @@ export default function PersistentDrawerLeft() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+  const Slider_data = getData.filter((UserData) => {
+    return UserData.CustomerName === "testuser";
+  })
   return (
     <div className={classes.root}>
       {/* <CssBaseline />
@@ -122,11 +129,11 @@ export default function PersistentDrawerLeft() {
           paper: classes.drawerPaper,
         }}
       >
-        <div className={classes.drawerHeader}>
+        {/* <div className={classes.drawerHeader}>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
-        </div>
+        </div> */}
         {/* <Divider />
         <List>
           <Link to="/app" style={{boxShadow:'none',textDecoration:'none',color:'inherit',fontFamily:'Montserrat, sans-serif'}}>
@@ -138,12 +145,19 @@ export default function PersistentDrawerLeft() {
         </List>
         <Divider /> */}
         <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <SlideshowIcon /> : <CreateIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
+        {Slider_data.map((UserData) => (
+          <ListItem button>
+          <ListItemIcon><ImportContactsIcon /></ListItemIcon>
+            <li key = {UserData.CustomerName}>{UserData.CurriculumName}</li>
             </ListItem>
           ))}
+          {Slider_data.map((UserData) => (
+          <ListItem button>
+              <ListItemIcon><CreateIcon /></ListItemIcon>
+              <li key = {UserData.CustomerName}>{UserData.TestName}</li>
+            </ListItem>
+            ))}
+          
           {/* <Link to="/app" style={{boxShadow:'none',textDecoration:'none',color:'inherit',fontFamily:'Montserrat, sans-serif'}}>
             <ListItem button>
               <ListItemIcon><SlideshowIcon /></ListItemIcon>
