@@ -22,9 +22,9 @@ app.get('/api/v1/',(req, res) => {
         Massage:"Hello,world"
     });
 });
-app.get('/api/m_001',(req, res) => {
-  M_001.getData(req,res);
-});
+// app.get('/api/m_001',(req, res) => {
+//   M_001.getData(req,res);
+// });
 // app.get('/api/s_001',(req, res) => {
 //   S_001.slidescreen(req,res);
 // });
