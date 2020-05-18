@@ -24,10 +24,10 @@ import { Slide, Slider } from '@material-ui/core';
 import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 
 const drawerWidth = 240;
-const drawertop = 72;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    position: 'fixed',
   },
   appBar: {
     transition: theme.transitions.create(['margin', 'width'], {
@@ -52,11 +52,9 @@ const useStyles = makeStyles((theme) => ({
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
-    top: drawertop,
   },
   drawerPaper: {
     width: drawerWidth,
-    top: drawertop,
   },
   drawerHeader: {
     display: 'flex',
@@ -82,6 +80,9 @@ const useStyles = makeStyles((theme) => ({
     }),
     marginLeft: 0,
   },
+  listtop: {
+    top: 60,
+  }
 }));
 export default function PersistentDrawerLeft() {
   const classes = useStyles();
@@ -144,7 +145,7 @@ export default function PersistentDrawerLeft() {
           </Link>
         </List>
         <Divider /> */}
-        <List>
+        <List className = {classes.listtop}>
         {Slider_data.map((UserData) => (
           <ListItem button>
           <ListItemIcon><ImportContactsIcon /></ListItemIcon>
