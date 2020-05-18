@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom'
+import { Link , Route } from 'react-router-dom'
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -19,31 +19,31 @@ import ListItemText from '@material-ui/core/ListItemText';
 import CreateIcon from '@material-ui/icons/Create';
 import SlideshowIcon from '@material-ui/icons/Slideshow';
 import AppsIcon from '@material-ui/icons/Apps';
-import {getData} from '../variables/UserData';
+import { getData } from '../variables/UserData';
+// import { Slide, Slider } from '@material-ui/core';
 import ImportContactsIcon from '@material-ui/icons/ImportContacts';
-
 import Slide from '../Slide';
 
 const drawerWidth = 240;
-
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    position: 'fixed',
   },
-  // appBar: {
-  //   transition: theme.transitions.create(['margin', 'width'], {
-  //     easing: theme.transitions.easing.sharp,
-  //     duration: theme.transitions.duration.leavingScreen,
-  //   }),
-  // },
-  // appBarShift: {
-  //   width: `calc(100% - ${drawerWidth}px)`,
-  //   marginLeft: drawerWidth,
-  //   transition: theme.transitions.create(['margin', 'width'], {
-  //     easing: theme.transitions.easing.easeOut,
-  //     duration: theme.transitions.duration.enteringScreen,
-  //   }),
-  // },
+  appBar: {
+    transition: theme.transitions.create(['margin', 'width'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+  },
+  appBarShift: {
+    width: `calc(100% - ${drawerWidth}px)`,
+    marginLeft: drawerWidth,
+    transition: theme.transitions.create(['margin', 'width'], {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
   menuButton: {
     marginRight: theme.spacing(2),
   },
@@ -81,29 +81,27 @@ const useStyles = makeStyles((theme) => ({
     }),
     marginLeft: 0,
   },
+  listtop: {
+    top: 60,
+  }
 }));
-
 export default function PersistentDrawerLeft() {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
-
-  const Slider_data = getData.filter((UserData) => {
-    return UserData.CustomerID === 1;
-  })
-
   const handleDrawerOpen = () => {
     setOpen(true);
   };
-
   const handleDrawerClose = () => {
     setOpen(false);
   };
-
+  const Slider_data = getData.filter((UserData) => {
+    return UserData.CustomerName === "testuser";
+  })
   return (
     <div className={classes.root}>
-      <CssBaseline />
-      {/* <AppBar
+      {/* <CssBaseline />
+      <AppBar
         position="fixed"
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
@@ -119,6 +117,9 @@ export default function PersistentDrawerLeft() {
           >
             <MenuIcon />
           </IconButton>
+          {/* <Typography variant="h6" noWrap>
+            仮メニュー
+          </Typography> */}
         </Toolbar>
       {/* </AppBar> */}
       <Drawer
@@ -130,24 +131,46 @@ export default function PersistentDrawerLeft() {
           paper: classes.drawerPaper,
         }}
       >
-        <div className={classes.drawerHeader}>
+        {/* <div className={classes.drawerHeader}>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
-        </div>
+        </div> */}
+        {/* <Divider />
         <List>
-          {Slider_data.map((UserData) => (
+          <Link to="/app" style={{boxShadow:'none',textDecoration:'none',color:'inherit',fontFamily:'Montserrat, sans-serif'}}>
+            <ListItem button>
+              <ListItemIcon><AppsIcon /></ListItemIcon>
+              <ListItemText primary="メニュー" />
+            </ListItem>
+          </Link>
+        </List>
+        <Divider /> */}
+        <List className = {classes.listtop}>
+        {Slider_data.map((UserData) => (
           <ListItem button>
           <ListItemIcon><ImportContactsIcon /></ListItemIcon>
-            <li key = {UserData.CustomerID}>{UserData.CurriculumName}</li>
+            <li key = {UserData.CustomerName}>{UserData.CurriculumName}</li>
             </ListItem>
           ))}
           {Slider_data.map((UserData) => (
           <ListItem button>
               <ListItemIcon><CreateIcon /></ListItemIcon>
-              <li key = {UserData.CustomerID}>{UserData.TestName}</li>
+              <li key = {UserData.CustomerName}>{UserData.TestName}</li>
             </ListItem>
             ))}
+          {/* <Link to="/app" style={{boxShadow:'none',textDecoration:'none',color:'inherit',fontFamily:'Montserrat, sans-serif'}}>
+            <ListItem button>
+              <ListItemIcon><SlideshowIcon /></ListItemIcon>
+              <ListItemText primary="個人情報研修" />
+            </ListItem>
+          </Link>
+          <Link to="/counterapp" style={{boxShadow:'none',textDecoration:'none',color:'inherit',fontFamily:'Montserrat, sans-serif'}}>
+            <ListItem button>
+              <ListItemIcon><CreateIcon /></ListItemIcon>
+              <ListItemText primary="個人情報テスト" />
+             </ListItem>
+          </Link> */}
         </List>
       </Drawer>
       <main
