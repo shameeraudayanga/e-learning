@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getData } from './variables/data';
+import { getData } from './data';
 
 const GetData = () => {
     const[page, setPage] = useState(1);
