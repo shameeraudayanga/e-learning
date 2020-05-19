@@ -11,17 +11,17 @@ const S_003 = require('./Api/S_003');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-const port = process.env.PORT || 4000; // port番号を指定
+const port = process.env.PORT || 3306; // port番号を指定
 
 
-// GET http://localhost:4000/api/v1/
+// GET http://localhost:3306
 app.get('/api/v1/',(req, res) => {
     res.json({
         Massage:"Hello,world"
     });
 });
-app.get('/api/m_001',(req, res) => {
-  M_001.getData(req,res);
+app.get('/api/m_001/:condition',(req, res) => {
+  M_001.getData(req.params.condition,res);
 });
 app.get('/api/s_001',(req, res) => {
   S_001.slidescreen(req,res);
