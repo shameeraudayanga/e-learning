@@ -9,6 +9,7 @@ const bodyParser = require('body-parser');
 
 const question2 = require('./Api/question2');
 const test = require('./Api/question1.jsx');
+const menu = require('./Api/menu');
 
 //body-parserの設定
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -41,6 +42,9 @@ app.get('/api/question2',(req,res) => {
 });
 app.get('/api/question1',(req, res) => {
   test.q_1(req,res);
+});
+app.get('/api/menu',(req, res) => {
+  menu.menu_screen(req,res);
 });
 
 
