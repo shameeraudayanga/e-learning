@@ -22,9 +22,7 @@ import AppsIcon from '@material-ui/icons/Apps';
 import { getData } from '../variables/UserData';
 import { Slide, Slider } from '@material-ui/core';
 import ImportContactsIcon from '@material-ui/icons/ImportContacts';
-import App from '../App'
 const drawerWidth = 240;
-// const drawertop = 72;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -53,11 +51,9 @@ const useStyles = makeStyles((theme) => ({
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
-    // top: drawertop,
   },
   drawerPaper: {
     width: drawerWidth,
-    // top: drawertop,
   },
   drawerHeader: {
     display: 'flex',
@@ -83,6 +79,9 @@ const useStyles = makeStyles((theme) => ({
     }),
     marginLeft: 0,
   },
+  listtop: {
+    top: 60,
+  }
 }));
 export default function PersistentDrawerLeft() {
   const classes = useStyles();
@@ -145,11 +144,7 @@ export default function PersistentDrawerLeft() {
           </Link>
         </List>
         <Divider /> */}
-        <List>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
+        <List className = {classes.listtop}>
         {Slider_data.map((UserData) => (
           <ListItem button>
           <ListItemIcon><ImportContactsIcon /></ListItemIcon>
@@ -181,20 +176,8 @@ export default function PersistentDrawerLeft() {
           [classes.contentShift]: open,
         })}
       >
-          <App />
         <div className={classes.drawerHeader} />
       </main>
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-

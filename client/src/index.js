@@ -2,13 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import Header from './Components/Header';
-import Sidebar from './Components/Sidebar';
+import M_001 from './M_001';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Sidebar />
-    <Header />
+    <M_001 />
   </React.StrictMode>,
   document.getElementById('root')
 );
