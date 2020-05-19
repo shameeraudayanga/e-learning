@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+// import Slide from './Slide';
+import Paging from './components/Pagination_kawashima';
+// import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/* <Slide /> */}
+    <Paging />
+    {/* <App /> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
