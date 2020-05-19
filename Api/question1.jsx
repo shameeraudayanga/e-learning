@@ -18,8 +18,7 @@ exports.q_1 = (req, res) => {
         if(err) throw (err);
         console.log('Connected!');
     
-        // const sql = require('./question1.txt');
-        const sql = "SELECT C2.contents_name, C1.contents_id, contents_detail_id, contents_statement, choice1, choice2, choice3, choice4, answer FROM m_contents_detail C1 JOIN m_contents C2 ON C1.contents_id = C2.contents_id WHERE C1.contents_id = 1 ORDER BY contents_detail_id";
+        const sql = "SELECT C2.contents_name, C1.contents_id, contents_detail_id, contents_statement, choice1, choice2, choice3, choice4, answer FROM test.m_contents_detail C1 JOIN test.m_contents C2 ON C1.contents_id = C2.contents_id WHERE C1.contents_id = 1 ORDER BY contents_detail_id";
         con.query(sql, (err, result, fields) => {
             if(err) throw err;
             res.json(result);
