@@ -4,7 +4,7 @@ exports.username = () => {
   con.connect(function(err) {
     if (err) throw err;
     console.log('Connected');
-    const sql = 'select * from e_learning.m_user where user_id = 1';
+    const sql = 'select * from e_learning.m_user where user_id = :user_id';
 
     con.query(sql, function (err, result, fields) {  
     if (err) throw err;  

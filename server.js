@@ -23,8 +23,8 @@ app.get('/api/v1/',(req, res) => {
 app.get('/api/m_001',(req, res) => {
   M_001.getData(req,res);
 });
-app.get('/api/s_001',(req, res) => {
-  S_001.slidescreen(req,res);
+app.get('/api/s_001/:condition',(req, res) => {
+  S_001.slidescreen(req.params.condition,res);
 });
 app.get('/api/s_002',(req, res) => {
   S_002.verification_screen(req,res);
