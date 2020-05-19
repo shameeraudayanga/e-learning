@@ -18,9 +18,13 @@ const Card_Gwey = (props) => {
   const classes = useStyles();
 
   return (
-    <div className={classes.media}>
-       {props.contents}
-    </div>
+    <Card>
+       <CardMedia
+          className={classes.media}
+          // image={require('../Assets/img/page1.jpg')}
+          image={require(props.contents)}
+        />
+    </Card>
   );
 }
 
