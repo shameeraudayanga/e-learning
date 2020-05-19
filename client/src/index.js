@@ -3,17 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import Sidebar from './components/Sidebar';
 import { Router } from 'react-router-dom';
 import { createBrowserHistory } from "history"
-import Header from './components/Header';
+import Sidebar from './components/Sidebar'
+import Header from './components/Header'
+import M_001 from './M_001'
 
 const hist = createBrowserHistory();
 
 ReactDOM.render(
   <Router history={hist}>
-    <Sidebar />
-    <Header />
+
     <App />
   </Router>,
   document.getElementById('root')
