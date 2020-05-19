@@ -6,7 +6,6 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import CreateIcon from '@material-ui/icons/Create';
-import { getData } from '../variables/UserData';
 import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
@@ -31,12 +30,9 @@ const useStyles = makeStyles((theme) => ({
     top: 60,
   }
 }));
-export default function PersistentDrawerLeft() {
+export default function PersistentDrawerLeft(props) {
   const classes = useStyles();
   const [open] = React.useState(true);
-  const Slider_data = getData.filter((UserData) => {
-    return UserData.CustomerName === "testuser";
-  })
   return (
     <div className={classes.root}>
       <Drawer
@@ -49,18 +45,14 @@ export default function PersistentDrawerLeft() {
         }}
       >
         <List className = {classes.listtop}>
-        {Slider_data.map((UserData) => (
           <ListItem button>
           <ListItemIcon><ImportContactsIcon /></ListItemIcon>
-            <li key = {UserData.CustomerName}>{UserData.CurriculumName}</li>
+            <li>{props.curriculum}</li>
             </ListItem>
-          ))}
-          {Slider_data.map((UserData) => (
           <ListItem button>
               <ListItemIcon><CreateIcon /></ListItemIcon>
-              <li key = {UserData.CustomerName}>{UserData.TestName}</li>
+              <li>{props.test}</li>
             </ListItem>
-            ))}
         </List>
       </Drawer>
       <main
