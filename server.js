@@ -38,6 +38,9 @@ app.get('/api/v1/',(req, res) => {
 app.get('/api/question1',(req, res) => {
   test.q_1(req,res);
 });
+// app.get('/api/question1/:userId',(req, res) => {
+//   test.q_1(req.params.userId,res);
+// });
 
 
 //サーバ起動
