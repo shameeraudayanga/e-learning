@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 // const S_003 = require('./Api/S_003');
 
 const question2 = require('./Api/question2');
+const test = require('./Api/question1.jsx');
 
 //body-parserの設定
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -37,6 +38,9 @@ app.get('/api/v1/',(req, res) => {
 
 app.get('/api/question2',(req,res) => {
   question2.question2(req,res);
+});
+app.get('/api/question1',(req, res) => {
+  test.q_1(req,res);
 });
 
 
