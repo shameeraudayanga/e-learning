@@ -9,12 +9,18 @@ const current_data = getData.filter((UserData) => {
     });
 
 
+
 const M_001 = () => {
     return (
         <div className="M_001">
-            <Sidebar />
             {current_data.map((UserData) => (
-            <Header key={UserData.CustomerID} contests={UserData.CustomerName} />
+            <Sidebar key = {UserData.CustomerName} 
+            curriculum = {UserData.CurriculumName}
+            test = {UserData.TestName}/>
+            ))}
+
+            {current_data.map((UserData) => (
+            <Header key={UserData.CustomerID} contents={UserData.CustomerName} />
             ))}
         </div>
     );
