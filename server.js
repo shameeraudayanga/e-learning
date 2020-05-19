@@ -34,7 +34,7 @@ app.get('/api/v1/',(req, res) => {
 //   S_003.end_screen(req,res);
 // });
 app.get('/api/menu',(req, res) => {
-  menu.menu_screen(req.params.codition,res);
+  menu.menu_screen(req,res);
 });
 
 
