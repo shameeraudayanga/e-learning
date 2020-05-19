@@ -46,6 +46,8 @@ const useStyles = makeStyles((theme) => ({
   // },
   menuButton: {
     marginRight: theme.spacing(2),
+    margin: 'auto',
+    zIndex: 1,
   },
   hide: {
     display: 'none',
@@ -102,7 +104,7 @@ export default function PersistentDrawerLeft() {
 
   return (
     <div className={classes.root}>
-      <CssBaseline />
+      {/* <CssBaseline /> */}
       {/* <AppBar
         position="fixed"
         className={clsx(classes.appBar, {
@@ -156,7 +158,7 @@ export default function PersistentDrawerLeft() {
         })}
       >
         <div className={classes.drawerHeader} />
-        <Route path="/slide" component={Slide} />
+        
       </main>
     </div>
   );
