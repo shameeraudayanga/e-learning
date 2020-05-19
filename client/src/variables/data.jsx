@@ -19,6 +19,8 @@ export const getdata =
             "choice2": "電話番号",
             "choice3": "住所",
             "choice4": "勤務先",
-            "answer": "正解"
+            "answer": 3
         }
     ];
+
+    export default getdata;

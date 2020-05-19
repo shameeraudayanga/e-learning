@@ -1,17 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-//import App from './App';
+import App from './App';
 import * as serviceWorker from './serviceWorker';
-import FrontC from './frontC';
-//import { transformFromAstSync } from '@babel/core';
+import { transformFromAstSync } from '@babel/core';
+// import ansewer from './components/Answer_takemura';
+import S_002 from './views/S_002';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <FrontC />
-    {/* <App /> */}
-    {/* <Question /> */}
+    <S_002 />
+    {/* <App />
+    <Question /> */}
+    {/* <ansewer /> */}
   </React.StrictMode>,
   document.getElementById('root')
 )
