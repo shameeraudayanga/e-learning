@@ -9,10 +9,9 @@ const M_001 = () => {
     return (
         <div className="M_001">
             {current_data.map((UserData) => (
-            <Sidebar key = {UserData.CustomerName}
+            <Sidebar key = {UserData.CustomerID}
             curriculum = {UserData.CurriculumName}
-            test = {UserData.TestName}
-            text = {UserData.Text}/>
+            test = {UserData.TestName}/>
             ))}
             {current_data.map((UserData) => (
             <Header key={UserData.CustomerID} contents={UserData.CustomerName} />
