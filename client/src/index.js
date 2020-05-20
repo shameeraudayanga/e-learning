@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import M_001 from './M_001';
 import * as serviceWorker from './serviceWorker';
 import { Router } from 'react-router-dom';
 import { createBrowserHistory } from "history";
@@ -10,7 +11,7 @@ const hist = createBrowserHistory();
 
 ReactDOM.render(
   <Router history={hist}>
-    <App />
+      <M_001 />
   </Router>,
   document.getElementById('root')
 );
