@@ -31,11 +31,12 @@ app.get('/api/userName',(req, res) => {
 */
 //サーバ起動
 app.listen(port);
+//MySQL以降の操作ここから
+
+
 console.log('Server listen on port:' + port);
 
-//SQLの回答データ
-let sampledata = null;
-
+//データベース名の変更はこちら
 const MySQLconnect = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -46,28 +47,36 @@ const MySQLconnect = mysql.createConnection({
 //MySQL への接続
 MySQLconnect.connect(function(err)
 {
+    //接続エラー
     if (err)
     {
       throw err;
     }
     console.log("接続成功");
-    let q = 'SELECT * FROM m_user;';
-    MySQLconnect.query(q,function (err, result)
+    let m_user     = 'SELECT * FROM m_user;';
+    let m_contents = 'SELECT * FROM m_contents;';
+
+    // GET http://localhost:4000/api/v1/k/
+    app.get('/api/m_user',function(req,res)
     {
-      console.log(result);
-      if(result)
+      MySQLconnect.query(m_user,function (err, result)
       {
-        sampledata = result;
-      }
-    });
-    // GET http://localhost:4000/api/v1/
-    app.get('/api/v1/',function(req,res){
-      res.send(sampledata);
-      /*
-      res.json(
-      {
-        value:Hello,World
+        console.log(result);
+        if(result)
+        {
+          res.send(result);
+        }
       });
-      */
+    });
+    app.get('/api/quizgameMondai',function(req,res)
+    {
+      MySQLconnect.query(m_contents,function (err, result)
+      {
+        console.log(result);
+        if(result)
+        {
+          res.send(result);
+        }
+      });
     });
 });
