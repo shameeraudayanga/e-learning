@@ -24,7 +24,7 @@ app.get('/api/menu',(req, res) => {
   menu.getData(req,res);
 });
 app.get('/api/slide',(req, res) => {
-  slide.getData(req,res);
+  slide.getData(req.params.condition,res);
 });
 app.get('/api/question',(req, res) => {
   question.getData(req,res);
