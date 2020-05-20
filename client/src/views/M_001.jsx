@@ -13,6 +13,10 @@ const M_001 = () => {
             curriculum = {M_User.CurriculumName}
             test = {M_User.TestName}/>
             ))}
+            {current_data.map((UserData) => (
+            <Header key={UserData.CustomerID} 
+            contents={UserData.CustomerName} />  
+            ))}
         </div>
     );
 }
