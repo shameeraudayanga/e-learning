@@ -34,7 +34,6 @@ const useStyles = makeStyles((theme) => ({
     marginLeft:'auto',
     marginRight:'auto', 
     height: 400,
-    width: 'auto',
 },
 }));
 
