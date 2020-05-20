@@ -27,7 +27,7 @@ const Header = (props) => {
   const classes = useStyles();
 return (
   <div className={classes.root}>
-    <AppBar position="static" className={classes.appbar}>
+    <AppBar position = 'fixed' className={classes.appbar}>
       <Toolbar className={classes.tool}>
         <Typography variant="h5" className={classes.title}>
         e-ラーニング
