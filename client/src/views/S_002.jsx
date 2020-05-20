@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Question from '../Components/Question';
-import Answer from '../Components/Answer';
+import Question from '../components/Question';
+import Answer from '../components/Answer';
 import Paper from '@material-ui/core/paper';
 import { getData } from '../variables/getData';
 import { makeStyles } from '@material-ui/core/styles';
@@ -54,7 +54,7 @@ const S_002 = () => {
          choice3={current_choice3}           
          choice4={current_choice4}           
       />))}
-      <Pagination count={10} Page={page} onChange={handleChange} siblingCount={3} />
+      <Pagination count={getData.length} Page={page} onChange={handleChange} siblingCount={3} />
       </div>
     </Paper>
   );
