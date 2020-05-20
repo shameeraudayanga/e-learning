@@ -37,7 +37,7 @@ const Slide = () => {
     return (
         <div>
             {current_data.map((data) => (
-             <Card_Gwey key={data.contents_detail_id} 
+             <CardGwey key={data.contents_detail_id} 
                 contents={data.contents_statement}
              />      
             ))}
