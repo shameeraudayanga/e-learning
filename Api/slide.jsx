@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-exports.getdata = (req, res) => {
+exports.getData = (req, res) => {
   const mysql = require('mysql');
 
   const con = mysql.createConnection({
