@@ -13,9 +13,6 @@ const M_001 = () => {
             curriculum = {M_User.CurriculumName}
             test = {M_User.TestName}/>
             ))}
-            {current_data.map((M_User) => (
-            <Header key={M_User.user_id} contents={M_User.user_name} />
-            ))}
         </div>
     );
 }
