@@ -16,8 +16,18 @@ const useStyles = makeStyles((theme) => ({
         '& > * + *': {
             marginTop: theme.spacing(2),
         },
+        display: 'flex',
+        textalign: 'center',
+        position: 'absolute',
+        bottom: 50,
+        right: '23%',
+        left: '23%',
+        marginLeft:'auto',
+        marginRight:'auto',
+        maxWidth:350,
+        minWidth:350,    
     },
-    
+
 }));
 
 const Slide = () => {
@@ -41,7 +51,7 @@ const Slide = () => {
                 contents={data.contents_statement}
              />      
             ))}
-    
+            
             <div className={classes.root}>
                 <Pagination count={getData.length} page={page} onChange={handleChange} />
             </div>

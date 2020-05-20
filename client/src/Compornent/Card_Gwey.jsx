@@ -11,6 +11,10 @@ const useStyles = makeStyles({
   media: {
     width:300,
     height: 300,
+    position: 'absolute',
+    top:'20%',
+    left:'30%',
+    margin:'auto',
   },
 });
 
@@ -19,7 +23,7 @@ const Card_Gwey = (props) => {
 
   return (
     <div className={classes.media}>
-       {props.contents}
+      <img src = {props.contents} />
     </div>
   );
 }

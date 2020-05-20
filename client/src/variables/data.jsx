@@ -3,18 +3,33 @@ export const getData =
     {
       "contents_id":1,
       "contents_detail_id":1,
-      "contents_statement":"../Assets/img/page1.jpg",
+      "contents_statement":require("../Assets/Img/page1.jpg"),
     },
     {
       "contents_id":1,
       "contents_detail_id":2,
-      "contents_statement":"../Assets/img/page2.jpg",
+      "contents_statement":require("../Assets/Img/page2.jpg"),
     },
     {
       "contents_id":1,
       "contents_detail_id":3,
-      "contents_statement":"../Assets/img/page3.jpg",
-    }
+      "contents_statement":require("../Assets/Img/page3.jpg"),
+    },
+    {
+      "contents_id":1,
+      "contents_detail_id":4,
+      "contents_statement":require("../Assets/Img/page4.jpg"),
+    },
+    {
+      "contents_id":1,
+      "contents_detail_id":5,
+      "contents_statement":require("../Assets/Img/page5.jpg"),
+    },
+    {
+      "contents_id":1,
+      "contents_detail_id":6,
+      "contents_statement":require("../Assets/Img/page6.jpg"),
+    },
   ];
 
   // {

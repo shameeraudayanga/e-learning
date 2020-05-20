@@ -14,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
 
 const Slide = () => {
     const classes = useStyles();
-    const bull = <span className={classes.bullet}>•</span>;
 
     const [page, setPage] = useState(1);
 
@@ -27,6 +26,11 @@ const Slide = () => {
 
     return (
      <div>
+         {current_data.map((data) => (
+             <li key={data.contents_detail_id}>
+                {data.contents_statement}
+             </li>
+         ))}
         <div className={classes.root}>
           <Pagination count={getData.length} page={page} onChange={handleChange} />
         </div>  
