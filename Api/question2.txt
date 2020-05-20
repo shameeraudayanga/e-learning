@@ -1,1 +1,0 @@
-SELECT C1.contents_id, contents_detail_id, C2.contents_name, contents_statement, choice1, choice2, choice3, choice4, answer FROM test.m_contents_detail AS C1 JOIN test.m_contents AS C2 ON C1.contents_id = C2.contents_id WHERE C1.contents_id = 2 ORDER BY contents_detail_id
