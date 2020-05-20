@@ -3,7 +3,7 @@ export const getData =
     {
       "contents_id":1,
       "contents_detail_id":1,
-      "contents_img":"../assets/img/001.jpg",
+      "contents_img":require("../assets/img/001.jpg"),
       "contents_name":"Question1",
       "contents_startment":"aaaaa",
       "contents_customer":"株式会社A",
@@ -16,7 +16,7 @@ export const getData =
     {
       "contents_id":1,
       "contents_detail_id":2,
-      "contents_img":"../assets/img/002.jpg",
+      "contents_img":require("../assets/img/002.jpg"),
       "contents_name":"Question2",
       "contents_startment":"bbbbb",
       "contents_customer":"株式会社B",
@@ -29,7 +29,7 @@ export const getData =
     {
       "contents_id":1,
       "contents_detail_id":3,
-      "contents_img":"../assets/img/003.jpg",
+      "contents_img":require("../assets/img/003.jpg"),
       "contents_name":"Question3",
       "contents_startment":"ccccc",
       "contents_customer":"株式会社C",
@@ -42,7 +42,7 @@ export const getData =
     {
       "contents_id":1,
       "contents_detail_id":4,
-      "contents_img":"../assets/img/004.jpg",
+      "contents_img":require("../assets/img/004.jpg"),
       "contents_name":"Question4",
       "contents_startment":"ddddd",
       "contents_customer":"株式会社D",
@@ -55,7 +55,7 @@ export const getData =
     {
       "contents_id":1,
       "contents_detail_id":5,
-      "contents_img":"../assets/img/005.jpg",
+      "contents_img":require("../assets/img/005.jpg"),
       "contents_name":"Question5",
       "contents_startment":"eeeee",
       "contents_customer":"株式会社E",
