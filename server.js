@@ -33,10 +33,6 @@ app.get('/api/userName',(req, res) => {
   userName.getData(req,res);
 });
 
-app.get('/api/question1/:userId',(req, res) => {
-  test.q_1(req.params.userId,res);
-});
-
 //サーバ起動
 app.listen(port);
 console.log('Server listen on port:' + port);
