@@ -3,17 +3,17 @@ export const getData =
     {
       "contents_id":1,
       "contents_detail_id":1,
-      "contents_statement":"../Assets/img/page1.jpg",
+      "contents_statement":require("../Assets/Img/page1.jpg"),
     },
     {
       "contents_id":1,
       "contents_detail_id":2,
-      "contents_statement":"../Assets/img/page2.jpg",
+      "contents_statement":require("../Assets/Img/page2.jpg"),
     },
     {
       "contents_id":1,
       "contents_detail_id":3,
-      "contents_statement":"../Assets/img/page3.jpg",
+      "contents_statement":require("../Assets/Img/page3.jpg"),
     }
   ];
 
