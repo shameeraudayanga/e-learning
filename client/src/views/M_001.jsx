@@ -1,20 +1,20 @@
 import React from 'react';
-import { getData } from '../variables/UserData';
+import { getUserData } from '../variables/M_User';
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
-const current_data = getData.filter((UserData) => {
-    return UserData.CustomerID === 1;
+const current_data = getUserData.filter((M_User) => {
+    return M_User.user_id === 1;
     });
 const M_001 = () => {
     return (
         <div className="M_001">
-            {current_data.map((UserData) => (
-            <Sidebar key = {UserData.CustomerID}
-            curriculum = {UserData.CurriculumName}
-            test = {UserData.TestName}/>
+            {current_data.map((M_User) => (
+            <Sidebar key = {M_User.user_id}
+            curriculum = {M_User.CurriculumName}
+            test = {M_User.TestName}/>
             ))}
-            {current_data.map((UserData) => (
-            <Header key={UserData.CustomerID} contents={UserData.CustomerName} />
+            {current_data.map((M_User) => (
+            <Header key={M_User.user_id} contents={M_User.user_name} />
             ))}
         </div>
     );
