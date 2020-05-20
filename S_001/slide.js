@@ -47,7 +47,7 @@ exports.slide = () =>
 // ' user_name ,varchar(50) ,character ,set,utf8 ,default ,NULL';
   // const sql = 'CREATE TABLE (' +
 // 'カラム名 Integer,'+
-// 'カラム名2 varchar(50)' + 
+// 'カラム名2 varchar(50)' +
 // + ')';
 // console.log(sql);
 // const sql = 'CREATE TABLE IF NOT EXISTS m_contents(
