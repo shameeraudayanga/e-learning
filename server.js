@@ -35,12 +35,12 @@ app.get('/api/v1/',(req, res) => {
 //   S_003.end_screen(req,res);
 // });
 
-app.get('/api/question2',(req,res) => {
-  question2.question2(req,res);
-});
+// app.get('/api/question2',(req,res) => {
+//   question2.question2(req,res);
+// });
 app.get('/api/question/:condition',(req,res) => {
-  
-})
+  question2.question2(req.params.condition,res);
+});
 
 
 //サーバ起動
