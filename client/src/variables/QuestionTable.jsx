@@ -9,7 +9,7 @@ export const QuestionTable =
     "Choice2":"電話番号",
     "Choice3":"住所",
     "Choice4":"勤務先",
-    "Answer":"回答する",
+    "Answer":"1",
     },
     {
     "Contents_id":2,
@@ -20,7 +20,7 @@ export const QuestionTable =
     "Choice2":"電話番号",
     "Choice3":"住所",
     "Choice4":"勤務先",
-    "Answer":"回答する",
+    "Answer":"2",
     },
     {
     "Contents_id":3,
@@ -31,7 +31,7 @@ export const QuestionTable =
     "Choice2":"電話番号",
     "Choice3":"住所",
     "Choice4":"勤務先",
-    "Answer":"回答する",
+    "Answer":"3",
     }
 ]
 

@@ -22,18 +22,17 @@ import Pagination from '@material-ui/lab/Pagination';
     });
   
 
-  const handleChange = (event, value) => {
+  const handleChange = (value) => {
     setPage(value);
   }
 
   return (
-    <Paper elevation={3}>
+    <Paper elevation={4}>
       <div>
            <div className={classes.root}>
             {current_data.map((data) => (
                 <Question key={data.Contents_detail_id} 
-                contents={data.Contents_statement}
-                />
+                contents={data.Contents_statement} />
             ))}
             </div>
             <Pagination count={QuestionTable.length} page={page} onChange={handleChange} />
