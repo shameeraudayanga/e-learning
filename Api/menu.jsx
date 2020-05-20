@@ -18,7 +18,8 @@ exports.menu_screen = (req,res) => {
     if (err) throw err;
     console.log('Connected!');
 
-    const sql = "select * from test.m_contents order by contents_type, contents_name";
+    // const sql = "select * from test.m_contents order by contents_type, contents_name";
+    const sql = "select * from test.m_contents=" + req +  "order by contents_type, contents_name";
     con.query(sql, (err, result, fields) => {
       if (err) throw err;
       res.json(result);
