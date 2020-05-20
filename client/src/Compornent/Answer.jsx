@@ -15,19 +15,23 @@ const Answer = (props) => {
 
   return (
     <div>
-      <Grid>
-        <Button variant="contained" onClick={() => handleClick(1)}>{props.choice1}</Button>
+      <Grid style={{listStyleType:"none"}}
+        container spacing={2}
+      >
+        <Grid item xs={6}> 
+          <Button variant="contained" color="primary" onClick={() => handleClick(1)}>{props.choice1}</Button>
+        </Grid>
+        <Grid item xs={6}>
+          <Button variant="contained" color="primary" onClick={() => handleClick(2)}>{props.choice2}</Button>
+        </Grid>
+        <Grid item xs={6}>
+          <Button variant="contained" color="primary" onClick={() => handleClick(3)}>{props.choice3}</Button>
+        </Grid>
+        <Grid item xs={6}>
+          <Button variant="contained" color="primary" onClick={() => handleClick(4)}>{props.choice4}</Button>
+        </Grid>
       </Grid>
-      <Grid>
-        <Button variant="contained" onClick={() => handleClick(2)}>{props.choice2}</Button>
-      </Grid>
-      <Grid>
-        <Button variant="contained" onClick={() => handleClick(3)}>{props.choice3}</Button>
-      </Grid>
-      <Grid>
-        <Button variant="contained" onClick={() => handleClick(4)}>{props.choice4}</Button>
-      </Grid>
-      <p>{correctness}</p>
+      <p style={{height:"20px"}}>{correctness}</p>
     </div>
   );
 } 
