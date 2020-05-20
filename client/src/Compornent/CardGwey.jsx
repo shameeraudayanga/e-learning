@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
+// import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
 
 const useStyles = makeStyles({
@@ -18,9 +18,8 @@ const useStyles = makeStyles({
   },
 });
 
-const Card_Gwey = (props) => {
+const CardGwey = (props) => {
   const classes = useStyles();
-
   return (
     <div className={classes.media}>
       <img src = {props.contents} />
@@ -28,4 +27,4 @@ const Card_Gwey = (props) => {
   );
 }
 
-export default Card_Gwey;
+export default CardGwey;
