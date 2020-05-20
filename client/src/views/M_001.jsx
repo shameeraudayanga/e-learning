@@ -11,7 +11,7 @@ const M_001 = () => {
             {current_data.map((UserData) => (
             <Sidebar key = {UserData.CustomerID}
             curriculum = {UserData.CurriculumName}
-            test = {UserData.TestName}/>
+            test = {UserData.TestName} />
             ))}
             {current_data.map((UserData) => (
             <Header key={UserData.CustomerID} contents={UserData.CustomerName} />
