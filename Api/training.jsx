@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-exports.verification_screen = (req, res) => {
+exports.getData = (req, res) => {
   const mysql = require('mysql');
 
   const con = mysql.createConnection({
@@ -20,7 +20,7 @@ exports.verification_screen = (req, res) => {
     if (err) throw err;
     console.log('Connected!');
 
-    const sql = "select * from test.customers";
+    const sql ="select * from e_learning.m_user where user_id =" + req;
     con.query(sql, (err, result, fields) => {
       if (err) throw err;
       res.json(result);
