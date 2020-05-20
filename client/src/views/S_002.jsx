@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Question from '../components/Question';
-import Answer from '../components/Answer';
+import Question from '../Components/Question';
+import Answer from '../Components/Answer';
 import Paper from '@material-ui/core/paper';
 import { getData } from '../variables/getData';
 import { makeStyles } from '@material-ui/core/styles';
