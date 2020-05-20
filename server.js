@@ -30,7 +30,7 @@ app.get('/api/question',(req, res) => {
   question.getData(req,res);
 });
 app.get('/api/userName',(req, res) => {
-  userName.getData(req,res);
+  userName.getData(req.params.condition,res);
 });
 
 //サーバ起動
