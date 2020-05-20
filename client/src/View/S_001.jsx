@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute',
         bottom: 50,
         right: '23%',
-        left: '23%',
+        left: '25%',
         marginLeft:'auto',
         marginRight:'auto',
         maxWidth:350,
