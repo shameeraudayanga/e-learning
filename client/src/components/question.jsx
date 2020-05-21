@@ -1,4 +1,6 @@
 import React from 'react';
+import '../Assets/Question.css'
+
 const Question = (props) => {
     return(
         <div>
