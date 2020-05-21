@@ -2,10 +2,10 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const menu = require('./Api/menu');
-const slide = require('./Api/slide');
+// const menu = require('./Api/menu');
+// const slide = require('./Api/slide');
 const question = require('./Api/question');
-const userName = require('./Api/userName');
+// const userName = require('./Api/userName');
 
 //body-parserの設定
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -20,18 +20,18 @@ app.get('/api/v1/',(req, res) => {
         Massage:"Hello,world"
     });
 });
-app.get('/api/menu',(req, res) => {
-  menu.getData(req,res);
-});
-app.get('/api/slide',(req, res) => {
-  slide.getData(req,res);
-});
+// app.get('/api/menu',(req, res) => {
+//   menu.getData(req,res);
+// });
+// app.get('/api/slide',(req, res) => {
+//   slide.getData(req,res);
+// });
 app.get('/api/question',(req, res) => {
   question.getData(req,res);
 });
-app.get('/api/userName',(req, res) => {
-  userName.getData(req,res);
-});
+// app.get('/api/userName',(req, res) => {
+//   userName.getData(req,res);
+// });
 
 //サーバ起動
 app.listen(port);
