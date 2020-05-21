@@ -1,17 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import CardImg from './Components/Card_kawashima';
-// import Paging from './Components/Pagination_kawashima';
-import Slide from './Views/S_001_kawashima';
 // import App from './App';
 import * as serviceWorker from './serviceWorker';
+import S00_1 from './View/S_001';
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <CardImg /> */}
-    {/* <Paging /> */}
-    <Slide />
+    <S00_1 />
     {/* <App /> */}
   </React.StrictMode>,
   document.getElementById('root')

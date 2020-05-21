@@ -4,7 +4,7 @@ import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import Pagination from '@material-ui/lab/Pagination';
 import { getData } from '../Variables/data';
-import CardImg from '../Components/Card_kawashima';
+import CardImg from '../Component/Card_kawashima';
 
 const useStyles = makeStyles((theme) => ({
   root: {
