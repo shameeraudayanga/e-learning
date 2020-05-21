@@ -1,42 +1,40 @@
-exports.slide = () =>
+/**
+ * MySQLを接続します
+ * @param mysql   MySQLモジュール
+ * @param express expressモジュール
+ */
+exports.MySQLStart = function(mysql,express)
 {
-    const mysql = require('mysql');
-    con.connect(function(err)
-    {
-        if (err)
-        {
-            throw err;
-        }
-        console.log('Connected!');
-    });
-    const con = mysql.createConnection(
+    const MySQLConnect = mysql.createConnection(
     {
         host:'localhost',
         user:'root',
-        password:''
+        password:'',
+        database:'quizgame'
     });
-    con.connect(function(err)
+    MySQLConnect.connect(function(error)
     {
-        if(err)
+        //接続エラー
+        if(error)
         {
-            throw err;
+            throw error;
         }
-        console.log('Connected!');
+        console.log("接続成功");
 
-        //抽出条件 SELECT
-        let sqlcommand = 'SELECT * FROM m_contents';
-
-        con.query(sqlcommand,(err,result,fields) =>
+        let query_param =
         {
-            console.log(result);
-            if(err)
-            {
-                throw err;
-            }
+          sql:'SELECT * FROM m_user WHERE user_id = ?;',
+          values:["2"]
+        };
 
-            sqlcommnd   = 'SELECT * FROM m_contents_detail';
-            con.query(sqlcommnd,(error,result,fields) => {
-                // 2回目のクエリ
+        express.get('/api/m_user',function(req,res)
+        {
+            MySQLConnect.query(query_param,function (error, results, fields)
+            {
+              if(results)
+              {
+                res.send(fields);
+              }
             });
         });
     });
