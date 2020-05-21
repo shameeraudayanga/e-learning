@@ -5,7 +5,7 @@ const app     = express();
 const mysql            = require('mysql');
 const bodyParser       = require('body-parser');
 const slidemodule      = require('./S_001/slide');
-const slidemodule      = require('./S_001/history');
+const historymodule      = require('./S_001/history');
 //const menu = require('./Api/menu');
 //const slide = require('./Api/slide');
 //const question = require('./Api/question');
@@ -30,3 +30,4 @@ app.listen(port);
 //MySQL以降の操作ここから
 console.log('Server listen on port:' + port);
 slidemodule.MySQLStart(mysql,app);
+historymodule.MySQLStart(mysql,app);
