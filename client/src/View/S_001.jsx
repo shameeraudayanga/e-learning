@@ -29,7 +29,6 @@ const useStyles = makeStyles((theme) => ({
         maxWidth:350,
         minWidth:350,    
     },
-
 }));
 
 const Slide = () => {
