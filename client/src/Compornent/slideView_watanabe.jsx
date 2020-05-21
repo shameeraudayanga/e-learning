@@ -7,8 +7,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 const useStyles = makeStyles({
   root: {
     // maxWidth: 300,
-    maxWidth:'80%',
-    minWidth:'80%',
+    maxWidth:500,
+    minWidth:400,
     // maxHeight:'auto',
     // minHeight:'auto',
     display: 'flex',
@@ -17,8 +17,8 @@ const useStyles = makeStyles({
     textAlign:'center',
     alignItems:'center',
     marginTop:100,
-    width: 300,
-    height:300,
+    // width: 450,
+    // height:450,
     clear:'both',
     flex:1,
     resizeMode:'stretch',
@@ -26,24 +26,24 @@ const useStyles = makeStyles({
     
   },
   media: {
-    // width:300,
-    // height: 300,
-    // maxWidth:'auto',
+    width:500,
+    height: 400,
+    // maxWidth:450,
     // minWidth:'auto',
-    // maxHeight:'auto',
+    // maxHeight:450,
     // minHeight:'auto',
     // display: 'flex',
-    // margin:'auto',
+    margin:'auto',
     // justifyContent: 'center',
-    // textAlign:'center',
-    // alignItems:'center',
+    textAlign:'center',
+    alignItems:'center',
     // marginTop:100,
     // width: 700,
     // height:400,
     // clear:'both',
     // flex:1,
-    // resizeMode:'stretch',
-    // position:'center',
+    resizeMode:'stretch',
+    position:'center',
   },
 });
 
@@ -52,7 +52,12 @@ const SlideView = (props) => {
   return (
     <Card className={classes.root}>
       <CardMedia>
-        <img src={props.contents} className={classes.media}/>
+        <img src={props.contents} 
+        className={classes.media} 
+        width="500" 
+        height="400"
+        alt=""
+         />
       </CardMedia>
     </Card>
   );
