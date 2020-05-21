@@ -1,21 +1,27 @@
-export const getData =
-  [
+export const getContentsData =
+[
     {
-      "user_id":1,
-      "user_name":"testuser",
-      "CurriculumName":"スライド①",
-      "TestName":"確認問題①",
+        "contents_id":1,
+        "contents_name":"スライド①",
+        "contents_type":1,
+        "target_user":1,
     },
     {
-      "user_id":2,
-      "user_name":"testuser2",
-      "CurriculumName":"スライド②",
-      "TestName":"確認問題②",
+        "contents_id":2,
+        "contents_name":"スライド②",
+        "contents_type":1,
+        "target_user":2,
     },
     {
-      "user_id":3,
-      "user_name":"testuser3",
-      "CurriculumName":"スライド③",
-      "TestName":"確認問題③",
-    }
-  ];
+        "contents_id":3,
+        "contents_name":"確認問題①",
+        "contents_type":2,
+        "target_user":1,
+    },
+    {
+        "contents_id":4,
+        "contents_name":"確認問題②",
+        "contents_type":2,
+        "target_user":2,
+    },
+];
