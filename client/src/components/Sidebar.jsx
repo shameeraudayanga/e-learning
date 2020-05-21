@@ -87,18 +87,20 @@ export default function PersistentDrawerLeft (props) {
         </div>
         <Divider />
         <List >
-            <Link to={props.curriculum} style={{boxShadow:'none',textDecoration:'none',color:'inherit',fontFamily:'Montserrat, sans-serif'}}>
-            <ListItem button>
-            <ListItemIcon><ImportContactsIcon /></ListItemIcon>
-            <li>{props.curriculum}</li>
-            </ListItem>
-        </Link>
-            <Link to={props.test} style={{boxShadow:'none',textDecoration:'none',color:'inherit',fontFamily:'Montserrat, sans-serif'}}>
-          <ListItem button>
-              <ListItemIcon><CreateIcon /></ListItemIcon>
-              <li>{props.test}</li>
-            </ListItem>
-        </Link>
+          {[props.name].map((index) => (
+            <Link to={props.name} style={{boxShadow:'none',textDecoration:'none',color:'inherit',fontFamily:'Montserrat, sans-serif'}}>
+              <ListItem button>
+                <ListItemIcon>{index % 2 === 0 ? <CreateIcon /> : <ImportContactsIcon />}</ListItemIcon>
+                <li>{props.name}</li>
+              </ListItem>
+            </Link>
+            // <Link to={props.name} style={{boxShadow:'none',textDecoration:'none',color:'inherit',fontFamily:'Montserrat, sans-serif'}}>
+            //   <ListItem button>
+            //     <ListItemIcon><CreateIcon /></ListItemIcon>
+            //     <li>{props.name}</li>
+            //   </ListItem>
+            // </Link>
+            ))}
         </List>
       </Drawer>
     </div>
