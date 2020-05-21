@@ -1,7 +1,7 @@
 /**
  * MySQLを接続します
  * @param mysql   MySQLモジュール
- * @param express expressモジュール
+ * @param express expressモジュール　仕方
  */
 exports.MySQLStart = function(mysql,express)
 {
