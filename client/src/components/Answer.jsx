@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import './Answer.css'
 import Button from '@material-ui/core/Button';
 import { Grid } from '@material-ui/core';
 
@@ -17,16 +16,16 @@ const Answer = (props) => {
   return (
     <div>
       <Grid>
-        <Button varient="contained" onClick={() => handleClick(1)}>{props.choice1}</Button>
+        <Button variant="contained" onClick={() => handleClick(1)}>{props.choice1}</Button>
       </Grid>
       <Grid>
-        <Button varient="contained" onClick={() => handleClick(2)}>{props.choice2}</Button>
+        <Button variant="contained" onClick={() => handleClick(2)}>{props.choice2}</Button>
       </Grid>
       <Grid>
-        <Button varient="contained" onClick={() => handleClick(3)}>{props.choice3}</Button>
+        <Button variant="contained" onClick={() => handleClick(3)}>{props.choice3}</Button>
       </Grid>
       <Grid>
-        <Button varient="contained" onClick={() => handleClick(4)}>{props.choice4}</Button>
+        <Button variant="contained" onClick={() => handleClick(4)}>{props.choice4}</Button>
       </Grid>
       <p>{correctness}</p>
     </div>
