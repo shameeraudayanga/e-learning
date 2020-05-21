@@ -8,7 +8,7 @@ const current_data = getUserData.filter((M_User) => {
     return M_User.user_id === 1;
     });
 const contents_data = getContentsData.filter((M_Contents) => {
-    return M_Contents.contents_id === 4;
+    return M_Contents.contents_id === 1;
     });
 
 const M_001 = () => {
