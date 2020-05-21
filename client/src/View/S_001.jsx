@@ -10,6 +10,8 @@ import Pagination from '@material-ui/lab/Pagination';
 // import Button from '@material-ui/core/Button';
 // import Typography from '@material-ui/core/Typography';
 import CardGwey from '../Compornent/CardGwey';
+// import SlideShow from '../Compornent/pagination_watanabe';
+import SlideView from '../Compornent/slideView_watanabe';
 
 
 
@@ -48,7 +50,7 @@ const Slide = () => {
     return (
         <div>
             {current_data.map((data) => (
-             <CardGwey key={data.contents_id}
+             <SlideView key={data.contents_id}
               contents = {data.contents_name}
             /> 
             ))}

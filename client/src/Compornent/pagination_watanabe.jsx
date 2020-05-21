@@ -1,8 +1,8 @@
   
-import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Pagination from '@material-ui/lab/Pagination';
-import {getData2} from './GetData2';
+import React, { useState } from './node_modules/react';
+import { makeStyles } from './node_modules/@material-ui/core/styles';
+import Pagination from './node_modules/@material-ui/lab/Pagination';
+import {getData2} from '../Variables/Data_watanabe';
 import SlideView from './SlideView';
 
 const useStyles = makeStyles((theme) => ({
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     
 }));
 
-const Slide = () => {
+const SlideShow = () => {
     const classes = useStyles();
     const bull = <span className={classes.bullet}>•</span>;
 
@@ -54,4 +54,4 @@ const Slide = () => {
     );
 }
 
-export default Slide;
+export default SlideShow;
