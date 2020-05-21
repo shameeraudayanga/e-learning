@@ -2,8 +2,8 @@ import React from 'react';
 const Question = (props) => {
     return(
         <div>
-            <h1>個人情報研修１</h1>
-            {props.contents}
+            <h1>{props.contentsquestion}</h1>
+            {props.contentstext}
         </div>
     );
 }

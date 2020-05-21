@@ -1,0 +1,12 @@
+body {
+    background-color: gray;
+    height: 100%;
+}
+
+.paper {
+    margin: 30px;
+    height: 800px;
+    top: 50px;
+    position: relative;
+    text-align: center;
+}

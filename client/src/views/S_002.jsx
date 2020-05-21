@@ -5,6 +5,7 @@ import Paper from '@material-ui/core/paper';
 import { getData } from '../variables/getData';
 import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
+import '../Assets/S_002.css'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,11 +40,13 @@ const S_002 = () => {
     <li key={data.contents_detail_id}>{data.choice4}</li>));
   
   return (
+    <body>
     <Paper elevation={3}>
-       <div className={classes.root}>
+       <div className={classes.root} >
             {current_data.map((data) => (
                 <Question key={data.contents_detail_id} 
-                contents={data.contents_statement}
+                contentstext={data.contents_statement}
+                contentsquestion={data.contents_name}
                 />
             ))}
       {current_data.map((data) => (
@@ -57,6 +60,7 @@ const S_002 = () => {
       <Pagination count={getData.length} Page={page} onChange={handleChange} siblingCount={3} />
       </div>
     </Paper>
+    </body>
   );
 }
 
