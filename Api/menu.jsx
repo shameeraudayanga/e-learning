@@ -5,12 +5,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-<<<<<<< HEAD
 exports.getData = (req,res) => {
-=======
-exports.menu_screen = (req,res) => {
-  // exports.getData = (req,res) => {
->>>>>>> serverB_shimura
   const mysql = require('mysql');
 
   const con = mysql.createConnection({
