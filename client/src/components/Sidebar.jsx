@@ -59,6 +59,7 @@ export default function PersistentDrawerLeft (props) {
     setOpen(false);
   };
 
+
   return (
     <div className={classes.root}>
         <Toolbar>
@@ -87,15 +88,15 @@ export default function PersistentDrawerLeft (props) {
           </IconButton>
         </div>
         <Divider />
-        <List >
-          {[props.name].map((text) => (
-            <Link to={props.name} style={{boxShadow:'none',textDecoration:'none',color:'inherit',fontFamily:'Montserrat, sans-serif'}}>
-              <ListItem button key={text}>
-                <ListItemIcon>{props.type % 2 === 0 ? <CreateIcon /> : <ImportContactsIcon />}</ListItemIcon>
-                <ListItemText primary={text} />
+        <List>
+          {getContentsData.map((data) => (
+            <Link to={data.contents_id} style={{boxShadow:'none',textDecoration:'none',color:'inherit',fontFamily:'Montserrat, sans-serif'}}>
+              <ListItem button key={data.contents_id}>
+                <ListItemIcon>{data.contents_type === 1 ? <CreateIcon /> : <ImportContactsIcon />}</ListItemIcon>
+                <ListItemText primary={data.contents_name} />
               </ListItem>
             </Link>
-            ))}
+          ))}
         </List>
       </Drawer>
     </div>
