@@ -39,6 +39,9 @@ app.get('/api/menu',(req, res) => {
   menu.menu_screen(req,res);
 });
 
+// app.get('/api/menu/:userID',(req, res) => {
+//   menu.getData(req.params.userID,res);
+// });
 
 //サーバ起動
 app.listen(port);
