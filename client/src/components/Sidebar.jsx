@@ -15,6 +15,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import CreateIcon from '@material-ui/icons/Create';
 import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 import { ListItemText } from '@material-ui/core';
+import { getContentsData } from '../variables/M_Contents';
 
 const drawerWidth = 240;
 
@@ -87,15 +88,15 @@ export default function PersistentDrawerLeft (props) {
           </IconButton>
         </div>
         <Divider />
-        <List >
-          {[props.name].map((text) => (
-            <Link to={props.name} style={{boxShadow:'none',textDecoration:'none',color:'inherit',fontFamily:'Montserrat, sans-serif'}}>
-              <ListItem button key={text}>
-                <ListItemIcon>{props.type % 2 === 0 ? <CreateIcon /> : <ImportContactsIcon />}</ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            </Link>
-            ))}
+        <List>
+        {getContentsData.map((data) => (
+          <Link to={data.contents_name} style={{boxShadow:'none',textDecoration:'none',color:'inherit',fontFamily:'Montserrat, sans-serif'}}>
+            <ListItem button key={data.contents_id}>
+              <ListItemIcon>{data.contents_type === 1 ? <ImportContactsIcon /> : <CreateIcon />}</ListItemIcon>
+              <ListItemText primary={data.contents_name} />
+            </ListItem>
+          </Link>
+          ))}
         </List>
       </Drawer>
     </div>
