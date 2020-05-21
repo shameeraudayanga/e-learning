@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import CardImg from './components/Card_kawashima';
-// import Paging from './components/Pagination_kawashima';
-import Slide from './views/S_001_kawashima';
+// import CardImg from './Components/Card_kawashima';
+// import Paging from './Components/Pagination_kawashima';
+import Slide from './Views/S_001_kawashima';
 // import App from './App';
 import * as serviceWorker from './serviceWorker';
 

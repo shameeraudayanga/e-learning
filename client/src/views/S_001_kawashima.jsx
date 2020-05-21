@@ -3,8 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import Pagination from '@material-ui/lab/Pagination';
-import { getData } from '../variables/data';
-import CardImg from '../components/Card_kawashima'
+import { getData } from '../Variables/data';
+import CardImg from '../Components/Card_kawashima';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -46,7 +46,7 @@ const Slide = () => {
   };
 
   const image_data = getData.filter((data) => {
-    return data.contents_detail_id === page;
+    return data.contents_id === page;
   });
 
   console.log(getData.length);
@@ -57,9 +57,9 @@ const Slide = () => {
       <Card className={classes.size}>
         <h3>個人情報保護研修</h3>
         <CardMedia className={classes.media}>
-         {image_data.map((data) => (
-            <CardImg key={data.contents_detail_id} style={{listStyle: 'none'}}
-              contents={data.contents_img} />
+          {image_data.map((data) => (
+            <CardImg key={data.contents_id} style={{listStyle: 'none'}}
+              contents={data.contents_name} />
           ))} 
         </CardMedia>
       </Card>

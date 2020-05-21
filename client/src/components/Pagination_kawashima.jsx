@@ -1,6 +1,6 @@
 import React from 'react';
-import Pagination from '@material-ui/lab/Pagination';
-import {getData} from '../variables/data';
+import Pagination from './node_modules/@material-ui/lab/Pagination';
+import {getData} from '../Variables/data';
 
 const Paging = () => {
   const [page, setPage] = React.useState(1);
