@@ -18,7 +18,7 @@ exports.getData = (req, res) => {
       if (err) throw err;
       console.log('Connected!');
     
-    const sql = "SELECT user_id AS ユーザーID , user_name AS ユーザー名 ";
+    const sql = "SELECT user_id AS ユーザーID , user_name AS ユーザー名 FROM test.m_user ORDER BY user_id";
     con.query(sql, (err, result, fields) => {
       if (err) throw err;
       res.json(result);
