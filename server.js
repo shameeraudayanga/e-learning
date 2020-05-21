@@ -26,8 +26,8 @@ app.get('/api/menu',(req, res) => {
 app.get('/api/slide',(req, res) => {
   slide.getData(req,res);
 });
-app.get('/api/question',(req, res) => {
-  question.getData(req,res);
+app.get('/api/question/:condition',(req, res) => {
+  question.getData(req.params.condition,res);
 });
 app.get('/api/userName',(req, res) => {
   userName.getData(req,res);
