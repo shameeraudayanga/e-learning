@@ -26,13 +26,12 @@ app.get('/api/question',(req, res) => {
   question.getData(req,res);
 });
 app.get('/api/userName',(req, res) => {
-  userName.getDate(req,res);
+  userName.getDate(req.params.condition,res);
 });
 */
 //サーバ起動
 app.listen(port);
 //MySQL以降の操作ここから
-
 
 console.log('Server listen on port:' + port);
 
@@ -53,18 +52,23 @@ MySQLconnect.connect(function(err)
       throw err;
     }
     console.log("接続成功");
-    let m_user     = 'SELECT * FROM m_user;';
     let m_contents = 'SELECT * FROM m_contents;';
 
-    // GET http://localhost:4000/api/v1/k/
+    let query_param =
+    {
+      sql:'SELECT * FROM m_user WHERE user_id = ?;',
+      values:["2"]
+    };
+
+    // GET http://localhost:4000/api/m_user
     app.get('/api/m_user',function(req,res)
     {
-      MySQLconnect.query(m_user,function (err, result)
+      MySQLconnect.query(query_param,function (error, results, fields)
       {
-        console.log(result);
-        if(result)
+        if(results)
         {
-          res.send(result);
+          res.send(fields);
+          const fileName = "sql.json";
         }
       });
     });
