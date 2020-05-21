@@ -28,7 +28,6 @@ const useStyles = makeStyles((theme) => ({
         marginRight:'auto',
         maxWidth:350,
         minWidth:350,  
-          
     },
 }));
 
