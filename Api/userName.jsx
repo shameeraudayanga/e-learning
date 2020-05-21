@@ -21,7 +21,6 @@ exports.getData = (req, res) => {
     console.log('Connected!');
 
     const sql ="select * from e_learning.m_user where user_id =" + req;
-    ;
 
     con.query(sql, (err, result, fields) => {
       if (err) throw err;

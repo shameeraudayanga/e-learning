@@ -20,7 +20,7 @@ exports.getData = (req, res) => {
     if (err) throw err;
     console.log('Connected!');
 
-    const sql ="Select contents_name,contents_type from e_learning.m_contents where contents_type = 1";
+    const sql ="Select contents_name from e_learning.m_contents where target_user =" + req;
 
     con.query(sql, (err, result, fields) => {
       if (err) throw err;
