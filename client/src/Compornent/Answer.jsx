@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import { Grid } from '@material-ui/core';
+import '../assets/Answer.css'
 
 const Answer = (props) => {  
   
@@ -18,7 +19,7 @@ const Answer = (props) => {
       <Grid style={{listStyleType:"none"}}
         container spacing={2}
       >
-        <Grid item xs={6}> 
+        <Grid className="button1" item xs={6}> 
           <Button variant="contained" color="primary" onClick={() => handleClick(1)}>{props.choice1}</Button>
         </Grid>
         <Grid item xs={6}>
