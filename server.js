@@ -33,6 +33,9 @@ app.get('/api/userName',(req, res) => {
   userName.getData(req,res);
 });
 
+// app.get('/api/menu/:userID',(req, res) => {
+//   menu.getData(req.params.userID,res);
+// });
 
 //サーバ起動
 app.listen(port);
