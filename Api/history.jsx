@@ -6,4 +6,5 @@ applicationCache.port('/',(req,res) => {
         console.log(result);
         res.send('登録が完了しました');
     });
+    
 });
