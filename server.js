@@ -29,8 +29,8 @@ app.get('/v1/',(req, res) => {
 // app.get('/api/question',(req, res) => {
 //   question.getData(req,res);
 // });
-app.get('/api/userName',(req, res) => {
-  userName.getData(req,res);
+app.get('/api/userName/:condition',(req, res) => {
+  userName.getData(req.params.condition,res);
 });
 
 //サーバ起動
