@@ -39,11 +39,13 @@ const S_002 = () => {
     <li key={data.contents_detail_id}>{data.choice4}</li>));
   
   return (
-    <Paper elevation={3}>
-       <div className={classes.root}>
+    <body>
+    <Paper elevation={3} className='paper'>
+       <div className={classes.root} >
             {current_data.map((data) => (
                 <Question key={data.contents_detail_id} 
-                contents={data.contents_statement}
+                contentstext={data.contents_statement}
+                contentsquestion={data.contents_name}
                 />
             ))}
       {current_data.map((data) => (
@@ -54,9 +56,12 @@ const S_002 = () => {
          choice3={current_choice3}           
          choice4={current_choice4}           
       />))}
-      <Pagination count={10} Page={page} onChange={handleChange} siblingCount={3} />
+      <div className='pagination'>
+      <Pagination count={getData.length} Page={page} onChange={handleChange} siblingCount={3} />
+      </div>
       </div>
     </Paper>
+    </body>
   );
 }
 
