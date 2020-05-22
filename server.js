@@ -13,30 +13,23 @@ const history = require('/Api/history');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-const port = process.env.PORT || 4000; // port番号を指定
+var port = process.env.PORT || 4000; // port番号を指定
 
 
 // GET http://localhost:4000/api/v1/
-app.get('/api/v1/',(req, res) => {
+// app.get('/api/v1/',function(req,res){
+//     res.json({
+//         Massage:"Hello,world"
+//     });
+// });
+
+app.get('/M_001/',function(req,res) {
     res.json({
-        Massage:"Hello,world"
+        
     });
-});
-app.get('/api/menu',(req, res) => {
-  menu.getData(req,res);
-});
-app.get('/api/slide/:condition',(req, res) => {
-  slide.getData(req.params.condition,res);
-});
-app.get('/api/question',(req, res) => {
-  question.getData(req,res);
-});
-app.get('/api/userName/:condition',(req, res) => {
-  userName.getData(req.params.condition,res);
-});
-app.get('/api/history/:condition',(req,res) => {
-  history.getData(req.params.condition,res);
-});
+})
+
+
 
 //サーバ起動
 app.listen(port);
