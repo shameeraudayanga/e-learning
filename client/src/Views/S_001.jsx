@@ -22,18 +22,22 @@ const useStyles = makeStyles((theme) => ({
         textalign: 'center',
         position: 'absolute',
         bottom: 50,
-        right: '23%',
-        left: '23%',
+        right: '25%',
+        left: '25%',
         marginLeft:'auto',
         marginRight:'auto',
         maxWidth:350,
         minWidth:350,  
     },
+    back: {
+        backgroundColor: 'f0f8ff',
+
+    },
 }));
 
 const Slide = () => {
     const classes = useStyles();
-    const bull = <span className={classes.bullet}>•</span>;
+    // const bull = <span className={classes.bullet}>•</span>;
 
     const [page, setPage] = useState(1);
 
@@ -46,7 +50,7 @@ const Slide = () => {
     
     
     return (
-        <div>
+        <div className={classes.back}>
             {current_data.map((data) => (
              <CardGwey key={data.contents_id}
               contents = {data.contents_name}
