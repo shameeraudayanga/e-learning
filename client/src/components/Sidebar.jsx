@@ -16,9 +16,7 @@ import CreateIcon from '@material-ui/icons/Create';
 import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 import { ListItemText } from '@material-ui/core';
 import { getContentsData } from '../variables/M_Contents';
-
 const drawerWidth = 240;
-
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -46,21 +44,16 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'flex-end',
   },
 }));
-
 export default function PersistentDrawerLeft (props) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
-
   const handleDrawerOpen = () => {
     setOpen(true);
   };
-
   const handleDrawerClose = () => {
     setOpen(false);
   };
-
-
   return (
     <div className={classes.root}>
         <Toolbar>
