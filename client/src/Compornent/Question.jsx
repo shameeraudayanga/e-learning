@@ -1,7 +1,7 @@
 import React from 'react';
+import '../assets/Question.css'
 
 const Question = (props) => {
-
     return(
         <div>
             <h1>{props.contentsquestion}</h1>
@@ -9,5 +9,4 @@ const Question = (props) => {
         </div>
     );
 }
-
 export default Question;
