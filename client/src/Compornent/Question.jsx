@@ -4,7 +4,8 @@ const Question = (props) => {
 
     return(
         <div>
-            {props.contents}
+            <h1>{props.contentsquestion}</h1>
+            {props.contentstext}
         </div>
     );
 }
