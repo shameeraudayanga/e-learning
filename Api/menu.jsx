@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -26,6 +27,8 @@ exports.getData = (req,res) => {
     });    
   });
 =======
+=======
+>>>>>>> 43a133f1669985a88d9c4cccca62df7dbdac694c
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -52,5 +55,8 @@ exports.getData = (req,res) => {
       res.json(result);
     });    
   });
+<<<<<<< HEAD
 >>>>>>> 43a133f... master merged
+=======
+>>>>>>> 43a133f1669985a88d9c4cccca62df7dbdac694c
 }
