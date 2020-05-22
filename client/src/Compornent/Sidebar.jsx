@@ -16,6 +16,8 @@ import CreateIcon from '@material-ui/icons/Create';
 import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 import { ListItemText } from '@material-ui/core';
 import { getContentsData } from '../Variables/M_Contents';
+import { Route } from 'react-router';
+import S_002 from '../Views/S_002'
 
 const drawerWidth = 240;
 
@@ -44,6 +46,22 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0, 1),
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
+  },
+  content: {
+    flexGrow: 1,
+    padding: theme.spacing(3),
+    transition: theme.transitions.create('margin', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    marginLeft: -drawerWidth,
+  },
+  contentShift: {
+    transition: theme.transitions.create('margin', {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+    marginLeft: 0,
   },
 }));
 
@@ -100,6 +118,14 @@ export default function PersistentDrawerLeft (props) {
           ))}
         </List>
       </Drawer>
+      <main
+        className={clsx(classes.content, {
+        [classes.contentShift]: open,
+        })}>
+        <div className={classes.drawerHeader} />
+        <Link to="s_002" style={{boxShadow:'none',textDecoration:'none',color:'inherit',fontFamily:'Montserrat, sans-serif'}}/>
+        <Route path="/s_002" component={S_002} />
+      </main>
     </div>
   );
 }

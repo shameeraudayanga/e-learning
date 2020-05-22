@@ -10,6 +10,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
       marginTop: theme.spacing(2),
+      flexGrow: 1,
+      padding: theme.spacing(3),
     },
   },
 }));
