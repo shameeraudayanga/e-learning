@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from './node_modules/react';
 import Question from '../Compornent/Question';
 import Answer from '../Compornent/Answer';
-import Paper from '@material-ui/core/paper';
+import Paper from './node_modules/@material-ui/core/paper';
 import { getData } from '../Variables/frontB';
-import { makeStyles } from '@material-ui/core/styles';
-import Pagination from '@material-ui/lab/Pagination';
+import { makeStyles } from './node_modules/@material-ui/core/styles';
+import Pagination from './node_modules/@material-ui/lab/Pagination';
 
 const useStyles = makeStyles((theme) => ({
   root: {
