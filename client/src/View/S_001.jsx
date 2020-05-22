@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Slide = () => {
     const classes = useStyles();
-    const bull = <span className={classes.bullet}>•</span>;
+    // const bull = <span className={classes.bullet}>•</span>;
 
     const [page, setPage] = useState(1);
 
