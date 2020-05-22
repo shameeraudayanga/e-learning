@@ -1,15 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-<<<<<<< HEAD
-import * as serviceWorker from './serviceWorker';
-import M_001 from './M_001';
-
-ReactDOM.render(
-  <React.StrictMode>
-    <M_001 />
-  </React.StrictMode>,
-=======
 import App from './App';
 import M_001 from './Views/M_001';
 import * as serviceWorker from './serviceWorker';
@@ -26,7 +17,6 @@ ReactDOM.render(
       <S_001 />
       {/* <S_002 /> */}
   </Router>,
->>>>>>> c964b38f5778ca331c2572c5fd4d87bea6d68102
   document.getElementById('root')
 )
 
