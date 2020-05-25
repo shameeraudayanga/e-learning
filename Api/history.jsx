@@ -19,6 +19,7 @@ exports.getData = (req, res) => {
         console.log('Connected!');
 
         const sql ="SELECT history_id, attending_user, contents_id, NOW(attending_date) FROM t_history" + req;
+        
         con.query(sql, (err, result, fields) => {
             if (err) throw err;
             res.json(result);
