@@ -3,9 +3,10 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 // const menu = require('./Api/menu');
-const slide = require('./Api/slide');
+// const slide = require('./Api/slide');
 // const question = require('./Api/question');
 // const userName = require('./Api/userName');
+const history = require('./Api/history');
 
 //body-parserの設定
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -31,6 +32,9 @@ app.get('/api/question/:condition',(req, res) => {
 });
 app.get('/api/userName/:condition',(req, res) => {
   userName.getData(req.params.condition,res);
+});
+app.get('/api/history',(req, res) => {
+  history.getData(req,res);
 });
 
 //サーバ起動
