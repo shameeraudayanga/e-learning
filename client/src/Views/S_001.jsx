@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
         },
         display: 'flex',
         textalign: 'center',
-        position: 'absolute',
+        // position: 'absolute',
         bottom: 50,
         right: '23%',
         left: '23%',

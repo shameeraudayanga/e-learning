@@ -11,7 +11,7 @@ const useStyles = makeStyles({
   media: {
     width:300,
     height: 300,
-    position: 'absolute',
+    // position: 'absolute',
     top:'20%',
     left:'30%',
     margin:'auto',

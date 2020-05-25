@@ -1,5 +1,6 @@
 import React from 'react';
 import { getUserData } from '../Variables/M_User';
+import { getContentsData } from '../Variables/M_Contents';
 import Header from '../Compornent/Header';
 import Sidebar from '../Compornent/Sidebar';
 
