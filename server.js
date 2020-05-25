@@ -34,7 +34,7 @@ app.get('/v1/',(req, res) => {
 //   userName.getData(req.params.condition,res);
 // });
 app.get('/api/history/:condition',(req, res) => {
-  history.getData(req.params.condition,res);
+    history.getData(req.params.condition,res);
 });
 
 //サーバ起動
