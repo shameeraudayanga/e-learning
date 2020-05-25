@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const Slide = () => {
+const S_001 = () => {
     const classes = useStyles();
     // const bull = <span className={classes.bullet}>•</span>;
 
@@ -48,6 +48,23 @@ const Slide = () => {
         return data.contents_id === page;
     });
     
+    // const [posts, setPosts] = useState([]);
+
+    // useEffect(() => getData() );
+  
+    // const getData = () => {
+    //   if (posts.length === 0) {
+    //     axios
+    //       .get('/api/v1')
+    //       .then(response => {
+    //         setPosts([response.data]);
+    //         console.log([response.data]);
+    //       })
+    //       .catch(() => {
+    //         console.log('失敗しました');
+    //       })
+    //   }
+    // }
     
     return (
         <div className={classes.back}>
@@ -64,4 +81,4 @@ const Slide = () => {
     );
 }
 
-export default Slide;
+export default S_001;

@@ -2,20 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
+import M_001 from './Views/M_001';
 import * as serviceWorker from './serviceWorker';
 import Slide from './Views/S_001';
-// import M_001 from './Views/M_001';
-// import { Router } from 'react-router-dom';
-// import { createBrowserHistory } from "history";
+// import S_002 from './Views/S_002';
+import { Router } from 'react-router-dom';
+import { createBrowserHistory } from "history";
 
-// const hist = createBrowserHistory();
+const hist = createBrowserHistory();
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Slide />
-    {/* <M_001 /> */}
-    {/* <App /> */}
-  </React.StrictMode>,
+  <Router history={hist}>
+      {/* <App /> */}
+      <M_001 />
+      <Slide />
+      {/* <S_002 /> */}
+  </Router>,
   document.getElementById('root')
 )
 
