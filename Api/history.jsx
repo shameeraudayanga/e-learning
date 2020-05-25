@@ -17,7 +17,7 @@ exports.getData = (req, res) => {
   });
 
   app.post('/', (req, res) => {
-	const sql = "INSERT INTO T_history SET history_id = +req attending_user = +req contents_id = +req attending_date +req;"
+	const sql = "INSERT INTO T_history SET history_id = 1 attending_user = 1 contents_id = 1 attending_date = 1;"
 	con.query(sql,req.body,function(err, result, fields){
 		if (err) throw err;
 		console.log(result);
