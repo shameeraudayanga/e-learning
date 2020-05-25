@@ -17,12 +17,12 @@ const Answer = (props) => {
 
   const useStyles = makeStyles( () => ({
     choice: {
-      backgroundColor: "#4791DB",
+      backgroundColor: "#B1CBE9",
       height: '50px',
       width: '200px',
       fontSize: '20px',
       '&:hover': {
-        backgroundColor: "#4791DB",
+        backgroundColor: "#B1CBE9",
       }
     }
   }));
