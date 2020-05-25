@@ -1,7 +1,7 @@
 import React from 'react';
 import { getUserData } from '../Variables/M_User';
-import Header from '../Compornent/Header';
-import Sidebar from '../Compornent/Sidebar';
+import Header from '../compornent/Header';
+import Sidebar from '../compornent/Sidebar';
 
 const current_data = getUserData.filter((M_User) => {
     return M_User.user_id === 1;
