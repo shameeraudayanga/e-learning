@@ -17,16 +17,13 @@ app.use(bodyParser.json());
 
 const port = process.env.PORT || 4000; // port番号を指定
 
-/*
+
 app.get('/api/menu',(req, res) => {
     menu.getData(req,res);
 });
 app.get('/api/slide/:condition',(req, res) => {
   slide.getData(req.params.condition,res);
 });
-<<<<<<< HEAD
-*/
-=======
 app.get('/api/question',(req, res) => {
   question.getData(req,res);
 });
@@ -34,7 +31,6 @@ app.get('/api/userName/:condition',(req, res) => {
   userName.getData(req.params.condition,res);
 });
 
->>>>>>> 179cfc7b0d1f2e662cda9a8f04496ec1e45c56eb
 //サーバ起動
 app.listen(port);
 //MySQL以降の操作ここから
