@@ -38,32 +38,36 @@ const S_002 = () => {
     }
   }
 
+  const current_data = posts.filter((data) => {
+    return data.contents_detail_id === page;
+  });
+
   const handleChange = (event, value) => {
     setPage(value);
   };
   
-  const current_answer = posts.map((data) => (<li key={data.contents_detail_id}>{data.answer}</li>));
+  const current_answer = current_data.map((data) => (<li key={data.contents_detail_id}>{data.answer}</li>));
   
-  const current_choice1 = posts.map((data) => (
+  const current_choice1 = current_data.map((data) => (
     <li key={data.contents_detail_id}>{data.choice1}</li>));
-  const current_choice2 = posts.map((data) => (
+  const current_choice2 = current_data.map((data) => (
     <li key={data.contents_detail_id}>{data.choice2}</li>));
-  const current_choice3 = posts.map((data) => (
+  const current_choice3 = current_data.map((data) => (
     <li key={data.contents_detail_id}>{data.choice3}</li>));
-  const current_choice4 = posts.map((data) => (
+  const current_choice4 = current_data.map((data) => (
     <li key={data.contents_detail_id}>{data.choice4}</li>));
   
   return (
     <body>
     <Paper elevation={3} className="paper">
        <div className={classes.root} >
-            {posts.map((data) => (
+            {current_data.map((data) => (
                 <Question key={data.contents_detail_id} 
                 contentstext={data.contents_statement}
                 contentsquestion={data.contents_name}
                 />
             ))}
-      {posts.map((data) => (
+      {current_data.map((data) => (
       <Answer key={data.contents_detail_id}
          answer={current_answer}
          choice1={current_choice1}           
@@ -72,7 +76,7 @@ const S_002 = () => {
          choice4={current_choice4}           
       />))}
       <div className='pagination'>
-      <Pagination count={getData.length} Page={page} onChange={handleChange} siblingCount={3} />
+      <Pagination count={posts.length} Page={page} onChange={handleChange} siblingCount={3} />
       </div>
       </div>
     </Paper>
