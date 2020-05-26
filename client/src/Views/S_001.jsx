@@ -110,9 +110,9 @@ const Slide = () => {
                     ))}
                 </div>
 
-                <div>
+                {/* <div>
                    <Pagination count={getData.length} page={page} onChange={handleChange} />
-                </div>
+                </div> */}
              </Card>
             
          </div>
