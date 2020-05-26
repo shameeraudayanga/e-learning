@@ -11,10 +11,10 @@ const App = () => {
   const getData = () => {
     if (posts.length === 0) {
       axios
-        .get('/api/v1')
+        .get('/api/userName/1')
         .then(response => {
-          setPosts([response.data]);
-          console.log([response.data]);
+          setPosts(response.data);
+          console.log(response.data);
         })
         .catch(() => {
           console.log('失敗しました');

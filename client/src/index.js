@@ -4,7 +4,7 @@ import './index.css';
 import M_001 from './Views/M_001';
 import * as serviceWorker from './serviceWorker';
 import S_001 from './Views/S_001';
-import S_002 from './Views/S_002';
+//import S_002 from './Views/S_002';
 import { Router } from 'react-router-dom';
 import { createBrowserHistory } from "history";
 

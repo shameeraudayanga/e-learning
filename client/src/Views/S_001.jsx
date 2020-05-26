@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from 'react';
-import { getData } from '../Variables/frontA';
+//import { getData } from '../Variables/frontA';
 import { makeStyles } from '@material-ui/core/styles';
-import Pagination from '@material-ui/lab/Pagination';
+//import Pagination from '@material-ui/lab/Pagination';
 import Card from '@material-ui/core/Card';
 // import CardActions from '@material-ui/core/CardActions';
 // import CardActionArea from '@material-ui/core/CardActionArea';
@@ -53,76 +53,68 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Slide = () => {
-    const classes = useStyles();
+     const classes = useStyles();
 
     // const [page, setPage] = useState(1);
 
     // const handleChange = (event, value) => {
     //     setPage(value);
     // };
-    const [posts, setPosts] = useState([]);
+   
+    // const current_data = getData.filter((data) => {
+    //     return data.contents_id === page;
+    // });
 
-    useEffect(() => getData() );
+    const [slide, setSlide] = useState([]);
+
+    useEffect(() => getUserData());
   
-    const getData = () => {
-      if (posts.length === 0) {
+    const getUserData = () => {
+      if(slide.length === 0) {
         axios
-          .get('/Variabls/frontA.jsx')
+          .get('/api/slide/1')
           .then(response => {
-            setPosts([response.data]);
-            console.log([response.data]);
+            console.log(response.data);
+            setSlide(response.data);
+            
           })
           .catch(() => {
-            console.log('失敗しました');
+            console.log('connected error');
           })
       }
     }
-    // const current_data = getData.filter((data) => {
-    //     return data.contents_id === page;
-    // });
 
-    
-    
+  
     // return (
-        
-    //     <div>
-    //     {posts.map((Msg, index) => (
-    //       <li key={index}>{Msg.Massage}</li>
-    //       ))
-    //     }
-    //         {/* {current_data.map((data) => (
-    //          <CardGwey key={data.contents_id}
-    //           contents = {data.contents_name}
-    //         /> 
-    //         ))} */}
-            
-    //         {/* <div className={classes.root}>
-    //             <Pagination count={getData.length} page={page} onChange={handleChange} />
-    //         </div> */}
-    // const handleChange = (event, value) => {
-    //     setPage(value);
-    // };
-    // const current_data = getData.filter((data) => {
-    //     return data.contents_id === page;
-    // });
+    //     <div className="Slide">
+             
+    //         {user.map((data) => (
+    //         <SlideView key={data.user_id} 
+    //         contents={data.user_name} />  
+    //         ))}
+    //     </div>
+    // );
 
-    
     return (
         <div className={classes.body}>
             <Card className={classes.card}>
-            <Typography className={classes.text} variant="h5" component="h2">
+                <Typography className={classes.text} variant="h5" component="h2">
                     個人情報保護研修①
                 </Typography>
-                {current_data.map((data) => (
-                <SlideView key={data.contents_id}
-                contents = {data.contents_name}
-                /> 
-                ))}
                 
-                <div className={classes.root}>
-                    <Pagination count={getData.length} page={page} onChange={handleChange} />
+                <div className="Slide">
+                    {slide.map((data) => (
+                    <SlideView key={data.contents_id}
+                     contents = {data.contents_statement}
+                    />
+                    ))}
                 </div>
+
+                {/* <div>
+                   <Pagination count={getData.length} page={page} onChange={handleChange} />
+                </div> */}
             </Card>
+            
         </div>
     );
 }
