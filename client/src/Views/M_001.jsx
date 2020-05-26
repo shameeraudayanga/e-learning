@@ -2,8 +2,7 @@ import React from 'react';
 import Header from '../Compornent/Header';
 import Sidebar from '../Compornent/Sidebar';
 import axios from 'axios';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import { useState , useEffect } from 'react';
 
 const M_001 = () => {
   const [user, setUser] = useState([]);
