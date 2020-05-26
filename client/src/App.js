@@ -11,10 +11,10 @@ const App = () => {
   const getData = () => {
     if (posts.length === 0) {
       axios
-        .get('/api/v1')
+        .get('/api/userName/1')
         .then(response => {
-          setPosts([response.data]);
-          console.log([response.data]);
+          setPosts(response.data);
+          console.log(response.data);
         })
         .catch(() => {
           console.log('失敗しました');
@@ -35,8 +35,10 @@ const App = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {posts.map((Msg, index) => (
-          <li key={index}>{Msg.Massage}</li>))}
+          {/* {posts.map((data) => (
+          <li key={data.user_id}>{data.user_name}{console.log(data.user_name)}</li>))} */}
+          {posts.map((data,index) => (
+          <li key={index}>{data.Massage}</li>))}
         </a>
       </header>
     </div>

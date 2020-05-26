@@ -15,7 +15,7 @@ const port = process.env.PORT || 4000; // port番号を指定
 
 
 // GET http://localhost:4000/api/v1/
-app.get('/v1/',(req, res) => {
+app.get('/api/v1',(req, res) => {
     res.json({
         Massage:"Hello,world"
     });
