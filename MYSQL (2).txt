@@ -1,0 +1,1 @@
+SELECT history_id, attending_user, contents_id, NOW(attending_date) FROM t_history;
