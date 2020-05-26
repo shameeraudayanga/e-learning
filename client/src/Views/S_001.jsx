@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { getData } from '../Variables/frontA';
 import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 import SlideView from '../Compornent/slideView_watanabe';
+import axios from 'axios';
 
 
 
@@ -46,16 +47,35 @@ const useStyles = makeStyles((theme) => ({
 
 const Slide = () => {
     const classes = useStyles();
-    const bull = <span className={classes.bullet}>•</span>;
 
-    const [page, setPage] = useState(1);
+        // // const bull = <span className={classes.bullet}>•</span>;
 
-    const handleChange = (event, value) => {
-        setPage(value);
-    };
-    const current_data = getData.filter((data) => {
-        return data.contents_id === page;
-    });
+        const [page, setPage] = useState(1);
+
+        const handleChange = (event, value) => {
+            setPage(value);
+        };
+        // const current_data = getData.filter((data) => {
+        //     return data.contents_id === page;
+        // });
+    
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => getSlideData() );
+
+  const getSlideData = () => {
+    if (posts.length === 0) {
+      axios
+        .get('/api/slide/1')
+        .then(response => {
+          setPosts(response.data);
+        //   console.log([response.data]);
+        })
+        .catch(() => {
+          console.log('失敗しました');
+        })
+    }
+    }
 
     
     return (
@@ -64,7 +84,7 @@ const Slide = () => {
             <Typography className={classes.text} variant="h5" component="h2">
                     個人情報保護研修①
                 </Typography>
-                {current_data.map((data) => (
+                {posts.map((data) => (
                 <SlideView key={data.contents_id}
                 contents = {data.contents_name}
                 /> 
