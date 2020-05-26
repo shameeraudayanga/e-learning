@@ -1,11 +1,11 @@
-import React, { useState } from './node_modules/react';
-import Question from '../Components/Question';
-import Answer from '../Components/Answer';
-import Paper from './node_modules/@material-ui/core/paper';
-import { getData } from '../Variables/getData';
-import { makeStyles } from './node_modules/@material-ui/core/styles';
-import Pagination from './node_modules/@material-ui/lab/Pagination';
-import '../assets/S_002.css';
+import React, { useState } from 'react';
+import Question from '../Compornent/Question';
+import Answer from '../Compornent/Answer';
+import Paper from '@material-ui/core/paper';
+import { getData } from '../Variables/frontB';
+import { makeStyles } from '@material-ui/core/styles';
+import Pagination from '@material-ui/lab/Pagination';
+import '../Assets/S_002.css';
 
 const useStyles = makeStyles((theme) => ({
   root: {
