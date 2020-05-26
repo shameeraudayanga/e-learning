@@ -1,20 +1,35 @@
 import React from 'react';
-import axios from 'axios';
-import { getUserData } from '../Variables/M_User';
 import Header from '../Compornent/Header';
 import Sidebar from '../Compornent/Sidebar';
-
-const current_data = getUserData.filter((M_User) => {
-    return M_User.user_id === 1;
-    });
+import axios from 'axios';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 const M_001 = () => {
+  const [user, setUser] = useState([]);
+
+  useEffect(() => getUserData());
+
+  const getUserData = () => {
+    if(user.length === 0) {
+      axios
+        .get('/api/userName/1')
+        .then(response => {
+          setUser(response.data);
+          
+        })
+        .catch(() => {
+          console.log('connected error');
+        })
+    }
+  }
+
     return (
         <div className="M_001">
             <Sidebar />
-            {current_data.map((M_User) => (
-            <Header key={M_User.user_id} 
-            contents={M_User.user_name} />
+            {user.map((data) => (
+            <Header key={data.user_id} 
+            contents={data.user_name} />  
             ))}
         </div>
     );
