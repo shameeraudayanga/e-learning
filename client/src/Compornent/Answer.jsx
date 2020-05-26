@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import { Grid } from '@material-ui/core';
-import '../assets/Answer.css'
+import '../Assets/Answer.css'
 
 const Answer = (props) => {  
   
@@ -17,22 +17,22 @@ const Answer = (props) => {
   return (
     <div>
       <Grid style={{listStyleType:"none"}}
-        container spacing={2}
+        container spacing={5}
       >
-        <Grid className="button1" item xs={6}> 
-          <Button variant="contained" color="primary" onClick={() => handleClick(1)}>{props.choice1}</Button>
+        <Grid className="button" item xs={6}> 
+          <Button variant="contained" size="large" onClick={() => handleClick(1)}>{props.choice1}</Button>
         </Grid>
         <Grid item xs={6}>
-          <Button variant="contained" color="primary" onClick={() => handleClick(2)}>{props.choice2}</Button>
+          <Button variant="contained" size="large" onClick={() => handleClick(2)}>{props.choice2}</Button>
+        </Grid>
+        <Grid className="button" item xs={6}>
+          <Button variant="contained" size="large" onClick={() => handleClick(3)}>{props.choice3}</Button>
         </Grid>
         <Grid item xs={6}>
-          <Button variant="contained" color="primary" onClick={() => handleClick(3)}>{props.choice3}</Button>
-        </Grid>
-        <Grid item xs={6}>
-          <Button variant="contained" color="primary" onClick={() => handleClick(4)}>{props.choice4}</Button>
+          <Button variant="contained" size="large" onClick={() => handleClick(4)}>{props.choice4}</Button>
         </Grid>
       </Grid>
-      <p style={{height:"20px"}}>{correctness}</p>
+      <p className="correctness">{correctness}</p>
     </div>
   );
 } 

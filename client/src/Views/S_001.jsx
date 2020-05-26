@@ -1,7 +1,7 @@
-import React, { useState } from './node_modules/react';
+import React, { useState } from 'react';
 import { getData } from '../Variables/frontA';
-import { makeStyles } from './node_modules/@material-ui/core/styles';
-import Pagination from './node_modules/@material-ui/lab/Pagination';
+import { makeStyles } from '@material-ui/core/styles';
+import Pagination from '@material-ui/lab/Pagination';
 // import Card from '@material-ui/core/Card';
 // import CardActions from '@material-ui/core/CardActions';
 // import CardActionArea from '@material-ui/core/CardActionArea';
