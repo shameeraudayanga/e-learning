@@ -71,8 +71,8 @@ const S_002 = () => {
          choice3={current_choice3}           
          choice4={current_choice4}           
       />))}
-      <div className="pagination">
-      <Pagination count={10} Page={page} onChange={handleChange} siblingCount={3} />
+      <div className='pagination'>
+      <Pagination count={getData.length} Page={page} onChange={handleChange} siblingCount={3} />
       </div>
       </div>
     </Paper>

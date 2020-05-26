@@ -14,11 +14,10 @@ const Answer = (props) => {
     setCorrectness("不正解です");
   }};
 
+
   return (
     <div>
-      <Grid style={{listStyleType:"none"}}
-        container spacing={5}
-      >
+      <Grid className="choice" container spacing={5}>
         <Grid className="button" item xs={6}> 
           <Button variant="contained" size="large" onClick={() => handleClick(1)}>{props.choice1}</Button>
         </Grid>
@@ -35,6 +34,6 @@ const Answer = (props) => {
       <p className="correctness">{correctness}</p>
     </div>
   );
-} 
+}
 
 export default Answer;
