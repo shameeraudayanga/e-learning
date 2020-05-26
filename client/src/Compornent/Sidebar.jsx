@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link , Route } from 'react-router-dom'
+import { Link , Route } from 'react-router-dom';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -16,18 +16,18 @@ import CreateIcon from '@material-ui/icons/Create';
 import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 import { ListItemText } from '@material-ui/core';
 import { getContentsData } from '../Variables/M_Contents';
-import S_001 from '../Views/S_001';
 import S_002 from '../Views/S_002';
+import S_001 from '../Views/S_001';
 
 const drawerWidth = 240;
-
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
   },
   menuButton: {
     marginRight: theme.spacing(2),
-    top: 67,
+    top: 80,
+    position: "fixed",
   },
   hide: {
     display: 'none',
@@ -64,21 +64,16 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 0,
   },
 }));
-
 export default function PersistentDrawerLeft (props) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
-
   const handleDrawerOpen = () => {
     setOpen(true);
   };
-
   const handleDrawerClose = () => {
     setOpen(false);
   };
-
-
   return (
     <div className={classes.root}>
         <Toolbar>
@@ -109,7 +104,7 @@ export default function PersistentDrawerLeft (props) {
         <Divider />
         <List>
         {getContentsData.map((data) => (
-          <Link to={data.contents_name} style={{boxShadow:'none',textDecoration:'none',color:'inherit',fontFamily:'Montserrat, sans-serif'}}>
+           <Link to={data.contents_type === 1 ? "/s_001" : "/s_002"} style={{boxShadow:'none',textDecoration:'none',color:'inherit',fontFamily:'Montserrat, sans-serif'}}>
             <ListItem button key={data.contents_id}>
               <ListItemIcon>{data.contents_type === 1 ? <ImportContactsIcon /> : <CreateIcon />}</ListItemIcon>
               <ListItemText primary={data.contents_name} />
@@ -120,11 +115,11 @@ export default function PersistentDrawerLeft (props) {
       </Drawer>
       <main
         className={clsx(classes.content, {
-          [classes.contentShift]: open,
+        [classes.contentShift]: open,
         })}>
         <div className={classes.drawerHeader} />
-        <Route path="/s_001" component={S_001} />
         <Route path="/s_002" component={S_002} />
+        <Route path="/s_001" component={S_001} />
       </main>
     </div>
   );
