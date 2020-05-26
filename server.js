@@ -33,8 +33,8 @@ app.get('/v1/',(req, res) => {
 // app.get('/api/userName/:condition',(req, res) => {
 //   userName.getData(req.params.condition,res);
 // });
-app.get('/api/history/:condition',(req, res) => {
-    history.getData(req.params.condition,res);
+app.get('/api/history',(req, res) => {
+    history.getData(req, res);
 });
 
 //サーバ起動
