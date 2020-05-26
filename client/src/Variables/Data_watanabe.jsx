@@ -1,0 +1,35 @@
+export const getData2 =
+[
+    {
+        "Pic_ID":1,
+        "Picture":require("../Asset/slide1.jpg"),
+    },
+    {
+        "Pic_ID":2,
+        "Picture":require("../Asset/slide2.jpg"),
+    },
+    {
+        "Pic_ID":3,
+        "Picture":require("../Asset/slide3.jpg"),
+    },
+    {
+        "Pic_ID":4,
+        "Picture":require("../Asset/wpdblue.jpg"),
+    },
+    {
+        "Pic_ID":5,
+        "Picture":require("../Asset/wpwhite.jpg"),
+    },
+    {
+        "Pic_ID":6,
+        "Picture":require("../Asset/wpblue.jpg"),
+    },
+    {
+        "Pic_ID":7,
+        "Picture":require("../Asset/wpwhite.jpg"),
+    },
+    {
+        "Pic_ID":8,
+        "Picture":require("../Asset/wpdblue.jpg"),
+    },
+]
