@@ -13,7 +13,7 @@ import Card from '@material-ui/core/Card';
 import axios from 'axios'
 import Typography from '@material-ui/core/Typography';
 import SlideView from '../Compornent/slideView_watanabe';
-
+import Header from '../Compornent/Header';
 
 
 
@@ -89,7 +89,7 @@ const Slide = () => {
     //     <div className="Slide">
              
     //         {user.map((data) => (
-    //         <SlideView key={data.user_id} 
+    //         <Header key={data.user_id} 
     //         contents={data.user_name} />  
     //         ))}
     //     </div>
@@ -110,13 +110,13 @@ const Slide = () => {
                     ))}
                 </div>
 
-                {/* <div>
+                <div>
                    <Pagination count={getData.length} page={page} onChange={handleChange} />
-                </div> */}
-            </Card>
+                </div>
+             </Card>
             
-        </div>
-    );
+         </div>
+     );
 }
 
 export default Slide;
