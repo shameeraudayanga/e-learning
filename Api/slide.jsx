@@ -22,7 +22,7 @@ exports.MySQLStart = function(mysql,express)
         console.log("接続成功");
 
         //クエリパラメータ(補助)
-        
+
 
 
         let query_param =
