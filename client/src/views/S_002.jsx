@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Question from '../Compornent/Question';
 import Answer from '../Compornent/Answer';
 import Paper from '@material-ui/core/paper';
-import { getData } from '../Variables/frontB';
 import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
 import '../Assets/S_002.css';
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,8 +19,26 @@ const S_002 = () => {
   const classes = useStyles();
   
   const [page,setPage] = useState(1);
-  
-  const current_data = getData.filter((data) => {
+
+  const [posts,setPosts] = useState([]);
+
+  useEffect(() => getData());
+
+  const getData = () => {
+    if (posts.length === 0) {
+      axios
+        .get('/api/question/1')
+        .then(response => {
+          setPosts(response.data);
+          console.log([response.data]);
+        })
+        .catch(() => {
+          console.log('失敗しました');
+        })
+    }
+  }
+
+  const current_data = posts.filter((data) => {
     return data.contents_detail_id === page;
   });
 
@@ -41,7 +59,7 @@ const S_002 = () => {
   
   return (
     <body>
-    <Paper elevation={3} className='paper'>
+    <Paper elevation={3} className="paper">
        <div className={classes.root} >
             {current_data.map((data) => (
                 <Question key={data.contents_detail_id} 
@@ -58,7 +76,7 @@ const S_002 = () => {
          choice4={current_choice4}           
       />))}
       <div className='pagination'>
-      <Pagination count={getData.length} Page={page} onChange={handleChange} siblingCount={3} />
+      <Pagination count={posts.length} Page={page} onChange={handleChange} siblingCount={3} />
       </div>
       </div>
     </Paper>
