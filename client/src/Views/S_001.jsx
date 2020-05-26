@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { getData } from '../Variables/frontA';
+// import { getData } from '../Variables/frontA';
 import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 import SlideView from '../Compornent/slideView_watanabe';
 
+import axios from 'axios';
+import {useEffect} from 'react';
 
 
 
@@ -26,14 +28,15 @@ const useStyles = makeStyles((theme) => ({
     },
     body: {
         backgroundColor:'lightgrey',
-        padding:10,
+        // backgroundColor: '#f2f2f2',
+        padding:16,
     },
     card: {
         width:'auto',
         height:550,
         marginLeft:'auto',
         marginRight:'auto',
-        bottom:10,
+        // bottom:10,
     },
     text: {
         width:250,
@@ -53,25 +56,57 @@ const Slide = () => {
     const handleChange = (event, value) => {
         setPage(value);
     };
-    const current_data = getData.filter((data) => {
-        return data.contents_id === page;
+    // const current_data = getData.filter((data) => {
+    //     return data.contents_id === page;
+    // });
+
+
+
+    const [text, setText] = useState([]);
+
+    useEffect(() => getData() );
+  
+    const getData = () => {
+      if (text.length === 0) {
+        axios
+          .get('/api/slide/3')
+          .then(response => {
+            setText(response.data);
+            console.log([response.data]);
+          })
+          .catch(() => {
+            console.log('失敗しました');
+          })
+      }
+    }
+
+    const current_data = text.filter((data) => {
+        return data.contents_detail_id === page;
     });
 
     
     return (
         <div className={classes.body}>
             <Card className={classes.card}>
-            <Typography className={classes.text} variant="h5" component="h2">
-                    個人情報保護研修①
-                </Typography>
+
                 {current_data.map((data) => (
+                    <Typography className={classes.text} variant="h5" component="h2" 
+                    key={data.contents_detail_id}
+                    >
+                            {/* 個人情報保護研修① */}
+                            {data.contents_detail_id}
+                            {data.contents_name}
+                        </Typography>
+                ))}
+
+                {/* {current_data.map((data) => (
                 <SlideView key={data.contents_id}
                 contents = {data.contents_name}
                 /> 
-                ))}
+                ))} */}
                 
                 <div className={classes.root}>
-                    <Pagination count={getData.length} page={page} onChange={handleChange} />
+                    <Pagination count={text.length} page={page} onChange={handleChange} />
                 </div>
             </Card>
         </div>
