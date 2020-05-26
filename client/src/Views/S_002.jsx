@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-import Question from '../compornent/Question';
-import Answer from '../compornent/Answer';
+import Question from '../Compornent/Question';
+import Answer from '../Compornent/Answer';
 import Paper from '@material-ui/core/paper';
 import { getData } from '../Variables/getData';
 import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
 import '../Assets/S_002.css';
+
+// import axios from 'axios';
+// import {useState} from 'react';
+// import{useEffect} from 'react';
 
 const useStyles = makeStyles((theme) => ({
   root: {

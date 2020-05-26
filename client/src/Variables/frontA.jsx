@@ -18,5 +18,4 @@ export const getData =
       "contents_type":"",
       "target_user":"",
     },
-    
   ];

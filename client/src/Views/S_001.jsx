@@ -10,9 +10,6 @@ import Pagination from '@material-ui/lab/Pagination';
 // import Button from '@material-ui/core/Button';
 // import Typography from '@material-ui/core/Typography';
 import CardGwey from '../Compornent/CardGwey';
-
-
-
 const useStyles = makeStyles((theme) => ({
     root: {
         '& > * + *': {
@@ -27,37 +24,30 @@ const useStyles = makeStyles((theme) => ({
         marginLeft:'auto',
         marginRight:'auto',
         maxWidth:350,
-        minWidth:350,  
+        minWidth:350,
     },
 }));
-
 const Slide = () => {
     const classes = useStyles();
     const bull = <span className={classes.bullet}>•</span>;
-
     const [page, setPage] = useState(1);
-
     const handleChange = (event, value) => {
         setPage(value);
     };
     const current_data = getData.filter((data) => {
         return data.contents_id === page;
     });
-    
-    
     return (
         <div>
             {current_data.map((data) => (
              <CardGwey key={data.contents_id}
               contents = {data.contents_name}
-            /> 
+            />
             ))}
-            
             <div className={classes.root}>
                 <Pagination count={getData.length} page={page} onChange={handleChange} />
             </div>
         </div>
     );
 }
-
 export default Slide;
