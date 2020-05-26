@@ -35,7 +35,7 @@ app.get('/api/userName/:condition',(req, res) => {
   userName.getData(req.params.condition,res);
 });
 
-app.post('/test',(req,res) => {
+app.get('/test',(req,res) => {
   history.insertDate(req,res);
 });
 
