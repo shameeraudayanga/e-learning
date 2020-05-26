@@ -16,16 +16,17 @@ exports.getData = (req, res) => {
 
     // con.connect((err) => {
         app.post('/', (req, res) => {
-            const sql = "INSERT INTO historyes SET ?"
+            const sql = "INSERT INTO history_id, attending_user, contents_id, NOW(attending_date) FROM t_history ?"
             con.query(sql,req.body,function(err, result, fields){
                 if (err) throw err;
                 console.log(result);
+                res.send('登録が完了しました');
             });
         });
 //         if (err) throw err;
 //         console.log('Connected!');
 
-//         const sql ="SELECT history_id, attending_user, contents_id, NOW(attending_date) FROM t_history WHERE history_id = " + req;
+        // const sql ="SELECT history_id, attending_user, contents_id, NOW(attending_date) FROM t_history WHERE history_id = " + req;
 
 //         con.query(sql, (err, result, fields) => {
 //             if (err) throw err;
