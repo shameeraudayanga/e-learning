@@ -21,6 +21,10 @@ exports.MySQLStart = function(mysql,express)
         }
         console.log("接続成功");
 
+        //クエリパラメータ(補助)
+        
+
+
         let query_param =
         {
           sql:'SELECT * FROM m_user WHERE user_id = ?;',
