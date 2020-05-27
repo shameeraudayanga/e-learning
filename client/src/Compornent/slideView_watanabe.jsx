@@ -5,8 +5,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth:500,
-    minWidth:400,
+    Width:500,
+    height:400,
     display: 'flex',
     margin:'auto',
     justifyContent: 'center',
