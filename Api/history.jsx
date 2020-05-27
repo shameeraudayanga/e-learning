@@ -14,7 +14,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-exports.getData = (req, res) => {
+exports.insertDate = (req, res) => {
     const mysql = require('mysql');
 
     const con = mysql.createConnection( {
@@ -23,11 +23,12 @@ exports.getData = (req, res) => {
         password: ''
     });
 
-app.post('./Api/history', (req, res) => {
-    const sql = "INSERT INTO e_learning.t_history(history_id,attending_user,contents_id,attending_date) VALUES(1,1,1,NOW())";
+    con.connect((err) => {
+      if(err) throw (err);
+      console.log('Connected!');    
 
-    
- 
+    const sql = "INSERT INTO e_learning.t_history(contents_id,attending_user,attending_date) VALUES(2,3,NOW())";
+
 con.query(sql, req.body, function(err, result, fields) {
  
     if(err) throw err;
