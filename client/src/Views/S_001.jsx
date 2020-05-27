@@ -100,11 +100,11 @@ const Slide = () => {
                         </Typography>
                 ))}
 
-                {/* {current_data.map((data) => (
+                {current_data.map((data) => (
                 <SlideView key={data.contents_id}
                 contents = {data.contents_name}
                 /> 
-                ))} */}
+                ))}
                 
                 <div className={classes.root}>
                     <Pagination count={text.length} page={page} onChange={handleChange} />
