@@ -16,7 +16,7 @@ exports.getData = (req, res) => {
 
     // con.connect((err) => {
         app.get('/api/history', (req, res) => {
-            const sql = "INSERT INTO history_id, attending_user, contents_id, NOW(attending_date) FROM t_history";
+            const sql = "INSERT INTO t_history (history_id, attending_user, contents_id, attending_date) SELECT history_id, attending_user, contents_id '現在' AS attending_date FROM t_history";
             con.query(sql,req.body,function(err, result, fields){
                 if (err) throw err;
                 console.log(result);
