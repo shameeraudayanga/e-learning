@@ -6,7 +6,7 @@ const menu = require('./Api/menu');
 const slide = require('./Api/slide');
 const question = require('./Api/question');
 const userName = require('./Api/userName');
-// const history = require('/Api/history');
+const history = require('/Api/history');
 
 
 //body-parserの設定
@@ -40,13 +40,11 @@ app.get('/api/question/:condition',(req, res) => {
 app.get('/api/userName/:condition',(req, res) => {
   userName.getData(req.params.condition,res);
 });
-// app.get('/api', (req, res) => {
-// 	const sql = "INSERT INTO T_history SET history_id = 1 attending_user = 1 contents_id = 1 attending_date = 1;"
-// 	con.query(sql,req.body,function(err, result, fields){
-// 		if (err) throw err;
-// 		console.log(result);
-// 		res.send('登録が完了しました');
-// 	});
+app.get('/test',(req,res) => {
+  history.getData(req,res);
+});
+
+
 
 //サーバ起動
 app.listen(port);
