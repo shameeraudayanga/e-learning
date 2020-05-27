@@ -1,7 +1,7 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 //import { getData } from '../Variables/frontA';
 import { makeStyles } from '@material-ui/core/styles';
-//import Pagination from '@material-ui/lab/Pagination';
+import Pagination from '@material-ui/lab/Pagination';
 import Card from '@material-ui/core/Card';
 // import CardActions from '@material-ui/core/CardActions';
 // import CardActionArea from '@material-ui/core/CardActionArea';
@@ -9,11 +9,10 @@ import Card from '@material-ui/core/Card';
 // import CardContent from '@material-ui/core/CardContent';
 // import Button from '@material-ui/core/Button';
 // import Typography from '@material-ui/core/Typography';
-//import CardGwey from '../Compornent/CardGwey';
+// import CardGwey from '../Compornent/CardGwey';
 import axios from 'axios'
 import Typography from '@material-ui/core/Typography';
-import SlideView from '../Compornent/slideView_watanabe';
-//import Header from '../Compornent/Header';
+//import SlideView from '../Compornent/slideView_watanabe';
 
 
 
@@ -23,44 +22,47 @@ const useStyles = makeStyles((theme) => ({
             marginTop: theme.spacing(2),
         },
         textalign: 'center',
-        marginTop:20,
+        marginTop: 20,
         right: '23%',
         left: '23%',
-        marginLeft:'auto',
-        marginRight:'auto',
-        maxWidth:350,
-        minWidth:350,    
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        maxWidth: 350,
+        minWidth: 350,
+        top: 550,
+        position: "absolute",
+        display: "flex",
     },
-
     body: {
-        backgroundColor:'lightgrey',
-        padding:10,
+        backgroundColor: 'lightgrey',
+        // backgroundColor: '#f2f2f2',
+        padding: 16,
     },
     card: {
-        width:'auto',
-        height:550,
-        marginLeft:'auto',
-        marginRight:'auto',
-        bottom:10,
+        width: 'auto',
+        height: 550,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        // bottom:10,
     },
     text: {
-        width:250,
-        height:30,
-        display:'block',
-        marginLeft:'20%',
-        marginTop:20,
+        width: 250,
+        height: 30,
+        display: 'block',
+        marginLeft: '20%',
+        marginTop: 20,
     }
 }));
 
 const Slide = () => {
-     const classes = useStyles();
+    const classes = useStyles();
 
-    // const [page, setPage] = useState(1);
+    const [page, setPage] = useState(1);
 
-    // const handleChange = (event, value) => {
-    //     setPage(value);
-    // };
-   
+    const handleChange = (event, value) => {
+        setPage(value);
+    };
+
     // const current_data = getData.filter((data) => {
     //     return data.contents_id === page;
     // });
@@ -68,55 +70,48 @@ const Slide = () => {
     const [slide, setSlide] = useState([]);
 
     useEffect(() => getUserData());
-  
+
     const getUserData = () => {
-      if(slide.length === 0) {
-        axios
-          .get('/api/slide/1')
-          .then(response => {
-            console.log(response.data);
-            setSlide(response.data);
-            
-          })
-          .catch(() => {
-            console.log('connected error');
-          })
-      }
+        if (slide.length === 0) {
+            axios
+                .get('/api/slide/3')
+                .then(response => {
+                    console.log([response.data]);
+                    setSlide(response.data);
+
+                })
+                .catch(() => {
+                    console.log('connected error');
+                })
+        }
     }
 
-  
-    // return (
-    //     <div className="Slide">
-             
-    //         {user.map((data) => (
-    //         <Header key={data.user_id} 
-    //         contents={data.user_name} />  
-    //         ))}
-    //     </div>
-    // );
+    const current_data = slide.filter((data) => {
+        return data.contents_detail_id === page;
+    });
 
     return (
         <div className={classes.body}>
             <Card className={classes.card}>
-                <Typography className={classes.text} variant="h5" component="h2">
-                    個人情報保護研修①
-                </Typography>
-                
-                <div className="Slide">
-                    {slide.map((data) => (
-                    <SlideView key={data.contents_id}
-                     contents = {data.contents_statement}
-                    />
-                    ))}
-                </div>
 
-                {/* <div>
-                   <Pagination count={getData.length} page={page} onChange={handleChange} />
-                </div> */}
-             </Card>
-            
-         </div>
-     );
+                {current_data.map((data) => (
+                    <Typography className={classes.text} variant="h5" component="h2"
+                        key={data.contents_detail_id}
+                    >
+                        <p>個人情報保護研修①</p>
+                        <p>{data.contents_detail_id}</p>
+                        <p>{data.contents_name}</p>
+                        <p>{data.contents_statement}</p>
+                        <p>{data.contents_type}</p>
+                    </Typography>
+                ))}
+
+                <div className={classes.root}>
+                    <Pagination count={slide.length} page={page} onChange={handleChange} />
+                </div>
+            </Card>
+        </div>
+    );
 }
 
 export default Slide;
