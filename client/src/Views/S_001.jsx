@@ -24,12 +24,13 @@ const useStyles = makeStyles((theme) => ({
         marginRight:'auto',
         maxWidth:350,
         minWidth:350,
-        top:550,
+        // top:550,
     },
     body: {
         backgroundColor:'lightgrey',
         // backgroundColor: '#f2f2f2',
         padding:16,
+        backgroundSize:'cover',
     },
     card: {
         width:'auto',
