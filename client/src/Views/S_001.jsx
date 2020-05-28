@@ -24,19 +24,24 @@ const useStyles = makeStyles((theme) => ({
         marginRight:'auto',
         maxWidth:350,
         minWidth:350,
-        // top:550,
+        margin:20,
     },
     body: {
         backgroundColor:'lightgrey',
         // backgroundColor: '#f2f2f2',
-        padding:16,
-        backgroundSize:'cover',
+        padding:15,
+        // width:'auto',
+        height:'100%',
+        margin:0,
+        bottom:0,
     },
     card: {
         width:'auto',
-        height:550,
+        height:'94.8vh',
+        // paddingTop:'25%',
         marginLeft:'auto',
         marginRight:'auto',
+        margin:'auto',
         // bottom:10,
     },
     text: {
@@ -86,32 +91,42 @@ const Slide = () => {
     });
 
     
-    return (
-        <div className={classes.body}>
-            <Card className={classes.card}>
+    if(page === text.length + 1) {
+        return (
+            <Typography className={classes.text} 
+                variant="h5" component="h2">
+                終わり～！！！！！
+            </Typography>
+        )
+    } else {
 
-                {current_data.map((data) => (
-                    <Typography className={classes.text} variant="h5" component="h2" 
-                    key={data.contents_detail_id}
-                    >
-                            {/* 個人情報保護研修① */}
-                            {data.contents_detail_id}
-                            {data.contents_name}
-                        </Typography>
-                ))}
+        return (
+            <div className={classes.body}>
+                <Card className={classes.card}>
 
-                {current_data.map((data) => (
-                <SlideView key={data.contents_id}
-                contents = {data.contents_name}
-                /> 
-                ))}
-                
-                <div className={classes.root}>
-                    <Pagination count={text.length} page={page} onChange={handleChange} />
-                </div>
-            </Card>
-        </div>
-    );
+                    {current_data.map((data) => (
+                        <Typography className={classes.text} variant="h5" component="h2" 
+                        key={data.contents_detail_id}
+                        >
+                                {/* 個人情報保護研修① */}
+                                {data.contents_detail_id}
+                                {data.contents_name}
+                            </Typography>
+                    ))}
+
+                    {current_data.map((data) => (
+                    <SlideView key={data.contents_id}
+                    contents = {data.contents_name}
+                    /> 
+                    ))}
+                    
+                    <div className={classes.root}>
+                        <Pagination count={text.length +1} page={page} onChange={handleChange} />
+                    </div>
+                </Card>
+            </div>
+        );
+    }
 }
 
 export default Slide;
