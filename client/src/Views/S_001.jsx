@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
-// import SlideView from '../Compornent/slideView_watanabe';
+import SlideView from '../Compornent/slideView_watanabe';
 import axios from 'axios';
 // import { FormHelperText } from '@material-ui/core';
 
@@ -31,17 +31,18 @@ const useStyles = makeStyles((theme) => ({
     body: {
         backgroundColor:'lightgrey',
         padding:10,
+        width: '100%',
+        height: 'auto',
     },
     card: {
         width:'auto',
         height:550,
         marginLeft:'auto',
         marginRight:'auto',
-        // bottom:10,
     },
     text: {
         width:250,
-        height:30,
+
         display:'block',
         marginLeft:'20%',
         marginTop:20,
@@ -54,7 +55,9 @@ const Slide = () => {
         // // const bull = <span className={classes.bullet}>•</span>;
 
         const [page, setPage] = useState(1);
-
+       
+        // const [slidePage, setSlidePage] = useState();
+        
         const handleChange = (event, value) => {
             setPage(value);
         };
@@ -82,7 +85,18 @@ const Slide = () => {
     const current_data = posts.filter((data) => {
         return data.contents_detail_id === page;
     });
-
+    
+    // const passed = () => {
+    //     setSlidePage(true);
+    // }
+    // const faild = () => {
+    //     setSlidePage(false);
+    // }
+    // if(page === posts.length){
+    //     return(
+    //         <div>end</div>
+    //     );
+    // } else{
     
     return (
         <div className={classes.body}>
@@ -94,12 +108,20 @@ const Slide = () => {
              </Typography>
              ))}  
 
+            {current_data.map((data) => (
+             <SlideView className={classes.text} key={data.contents_detail_id}>
+                 contents={data.contents_name}
+             </SlideView>
+             ))}  
+
              <div className={classes.root}>
-               <Pagination count={posts.length} page={page} onChange={handleChange} />
+               <Pagination count={posts.length} page={page} onChange={handleChange} 
+               passd={passed} faild={faild}/>
              </div>
+             {console.log(slidePage)}
             </Card>
         </div>
     );
 }
-
+// }
 export default Slide;
