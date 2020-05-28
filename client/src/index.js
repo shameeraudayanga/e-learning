@@ -13,7 +13,7 @@ const hist = createBrowserHistory();
 
 ReactDOM.render(
   <Router history={hist}>
-      {/* <M_001 /> */}
+      <M_001 />
       <S_001 />
       {/* <S_002 /> */}
   </Router>,
