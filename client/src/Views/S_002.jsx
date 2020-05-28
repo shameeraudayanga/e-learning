@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Question from '../Compornent/Question';
 import Answer from '../Compornent/Answer';
 import Paper from '@material-ui/core/paper';
-import { getData } from '../variables/frontB';
+import { getData } from '../Variables/frontB';
 import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
 
