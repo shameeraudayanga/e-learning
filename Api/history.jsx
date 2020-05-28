@@ -23,8 +23,10 @@ exports.MySQLStart = function(mysql,express)
 
         let set_param =
         {
-          カラム名1:値,
-          カラム名2:値
+            history_id:値,
+            attending_user:値,
+            contents_id:2,
+            attending_date:値
         };
         let query_param =
         {
