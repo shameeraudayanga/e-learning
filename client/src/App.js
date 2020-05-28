@@ -11,7 +11,7 @@ const App = () => {
   const getData = () => {
     if (posts.length === 0) {
       axios
-        .get('/api/v1')
+        .get('/api/slide/1')
         .then(response => {
           setPosts([response.data]);
           console.log([response.data]);

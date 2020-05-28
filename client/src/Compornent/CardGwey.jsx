@@ -12,18 +12,31 @@ const useStyles = makeStyles({
     width:300,
     height: 300,
     position: 'absolute',
-    top:'20%',
-    left:'30%',
+    top:'7%',
+    left:'5%',
     margin:'auto',
   },
+
+  slideCard: {
+      display:'block',
+      position:'absolute',
+      height:450,
+      width:550,
+      padding:10,
+      top:'10%',
+      left:'28%',
+  },
 });
+
 
 const CardGwey = (props) => {
   const classes = useStyles();
   return (
+    <Card className={classes.slideCard}>
     <div className={classes.media}>
       <img src = {props.contents} />
     </div>
+    </Card>
   );
 }
 
