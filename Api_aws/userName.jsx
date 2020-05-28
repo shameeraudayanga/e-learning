@@ -26,7 +26,7 @@ exports.getData = (req, res) => {
    }
  )
  .then(client => {
-   client.query("select * from e_learning.m_user where user_id = " + req, function (err, results, fields) {
+   client.query("select * from m_user where user_id = " + req, function (err, results, fields) {
      if(err) throw err
      console.log(results);
      res.json(results);
