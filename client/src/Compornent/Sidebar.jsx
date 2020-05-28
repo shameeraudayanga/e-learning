@@ -1,5 +1,9 @@
 import React from 'react';
+<<<<<<< HEAD
 import { Link , Route } from 'react-router-dom'
+=======
+import { Link , Route } from 'react-router-dom';
+>>>>>>> 7f4c8a0645873dd1cdbd419e1f98605453b68a1a
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -15,9 +19,17 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import CreateIcon from '@material-ui/icons/Create';
 import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 import { ListItemText } from '@material-ui/core';
+<<<<<<< HEAD
 import { getContentsData } from '../Variables/M_Contents';
 import S_001 from '../Views/S_001'
 import S_002 from '../Views/S_002'
+=======
+import S_001 from '../Views/S_001';
+import S_002 from '../Views/S_002';
+import axios from 'axios';
+import { useState , useEffect } from 'react';
+
+>>>>>>> 7f4c8a0645873dd1cdbd419e1f98605453b68a1a
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -73,6 +85,28 @@ export default function PersistentDrawerLeft (props) {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+<<<<<<< HEAD
+=======
+
+  const [user, setUser] = useState([]);
+
+  useEffect(() => getContentsData());
+
+  const getContentsData = () => {
+    if(user.length === 0) {
+      axios
+        .get('/api/menu/1')
+        .then(response => {
+          setUser(response.data);
+          
+        })
+        .catch(() => {
+          console.log('connected error');
+        })
+    }
+  }
+
+>>>>>>> 7f4c8a0645873dd1cdbd419e1f98605453b68a1a
   return (
     <div className={classes.root}>
         <Toolbar>
@@ -102,10 +136,15 @@ export default function PersistentDrawerLeft (props) {
         </div>
         <Divider />
         <List>
+<<<<<<< HEAD
         {getContentsData.map((data) => (
            <Link to={data.contents_type === 1 ? "/s_001" : "/s_002"} style={{boxShadow:'none',textDecoration:'none',color:'inherit',fontFamily:'Montserrat, sans-serif'}}>
+=======
+        {user.map((data) => (
+           <Link to={data.contents_type == 1 ? "/s_001" : "/s_002"} style={{boxShadow:'none',textDecoration:'none',color:'inherit',fontFamily:'Montserrat, sans-serif'}}>
+>>>>>>> 7f4c8a0645873dd1cdbd419e1f98605453b68a1a
             <ListItem button key={data.contents_id}>
-              <ListItemIcon>{data.contents_type === 1 ? <ImportContactsIcon /> : <CreateIcon />}</ListItemIcon>
+              <ListItemIcon>{data.contents_type == 1 ? <ImportContactsIcon /> : <CreateIcon />}</ListItemIcon>
               <ListItemText primary={data.contents_name} />
             </ListItem>
           </Link>
