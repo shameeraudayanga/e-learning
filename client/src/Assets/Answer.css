@@ -1,0 +1,13 @@
+.grid {
+    list-style-type: none;
+}
+
+.button {
+    text-align: right;
+}
+
+.correctness {
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+}

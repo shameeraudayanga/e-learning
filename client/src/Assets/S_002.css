@@ -1,0 +1,18 @@
+body {
+    background-color: #F2F2F2;
+}
+
+.paper {
+    margin: 30px;
+    height: 85vh;
+    top: 50px;
+    border: 1px solid black;
+}
+
+.pagination {
+    top: 80px;
+    position: relative;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
