@@ -1,0 +1,27 @@
+body {
+    background-color: #F2F2F2;
+}
+
+.paper {
+    margin: 30px;
+    height: 85vh;
+    top: 50px;
+    border: 1px solid black;
+}
+
+.registration {
+    display: inline-block;
+    text-align: left;
+    padding: 10px 0px 50px 50px;  
+    list-style-type: none;  
+}
+
+.button {
+    text-align: center;
+    margin: 100px;
+}
+
+.content {
+    text-align: center;
+    margin: 50px;
+}

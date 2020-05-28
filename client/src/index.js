@@ -5,7 +5,9 @@ import M_001 from './Views/M_001';
 // import App from './App';
 import * as serviceWorker from './serviceWorker';
 // import S_001 from './Views/S_001';
-import S_002 from './Views/S_002';
+// import S_002 from './Views/S_002';
+import S_003 from './Views/S_003'
+import Registration from './Compornent/Answerjudge';
 import { Router } from 'react-router-dom';
 import { createBrowserHistory } from "history";
 
@@ -15,7 +17,9 @@ ReactDOM.render(
   <Router history={hist}>
       <M_001 />
       {/* <S_001 /> */}
-      <S_002 />
+      {/* <S_002 /> */}
+      <S_003 />
+      <Registration />
   </Router>,
   document.getElementById('root')
 )

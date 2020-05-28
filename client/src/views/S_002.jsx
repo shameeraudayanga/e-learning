@@ -33,7 +33,7 @@ const S_002 = () => {
           console.log([response.data]);
         })
         .catch(() => {
-          console.log('失敗しました');
+          console.log('connected error');
         })
     }
   }

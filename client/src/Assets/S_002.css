@@ -4,13 +4,13 @@ body {
 
 .paper {
     margin: 30px;
-    height: 800px;
+    height: 85vh;
     top: 50px;
     border: 1px solid black;
 }
 
 .pagination {
-    top: 200px;
+    top: 80px;
     position: relative;
     justify-content: center;
     display: flex;
