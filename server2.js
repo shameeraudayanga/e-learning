@@ -2,11 +2,11 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const menu = require('./Api/menu');
-const slide = require('./Api/slide');
-const question = require('./Api/question');
-const userName = require('./Api/userName');
-const history = require('./Api/history');
+const menu = require('./Api_aws/menu');
+const slide = require('./Api_aws/slide');
+const question = require('./Api_aws/question');
+const userName = require('./Api_aws/userName');
+const history = require('./Api_aws/history');
 
 
 //body-parserの設定
