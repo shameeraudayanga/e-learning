@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import { Grid } from '@material-ui/core';
+import PropTypes from 'prop-types';
+
+const propTypes = {
+  passed: PropTypes.func,
+  faild: PropTypes.func,
+};
 
 const Answer = (props) => {  
   
@@ -9,8 +15,10 @@ const Answer = (props) => {
 　const handleClick = (selected) => {
   if (selected === props.answer[0].props.children) {
     setCorrectness("正解です");
+    props.passed();
   } else {
     setCorrectness("不正解です");
+    props.faild();
   }};
 
   return (
@@ -31,5 +39,5 @@ const Answer = (props) => {
     </div>
   );
 } 
-
+Answer.propTypes = propTypes;
 export default Answer;

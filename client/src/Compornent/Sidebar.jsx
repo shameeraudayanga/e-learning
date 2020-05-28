@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link , Route } from 'react-router-dom'
+import { Link , Route } from 'react-router-dom';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -15,9 +15,11 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import CreateIcon from '@material-ui/icons/Create';
 import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 import { ListItemText } from '@material-ui/core';
-import { getContentsData } from '../Variables/M_Contents';
-import S_001 from '../Views/S_001'
-import S_002 from '../Views/S_002'
+import S_001 from '../Views/S_001';
+import S_002 from '../Views/S_002';
+import axios from 'axios';
+import { useState , useEffect } from 'react';
+
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -73,6 +75,25 @@ export default function PersistentDrawerLeft (props) {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
+  const [user, setUser] = useState([]);
+
+  useEffect(() => getContentsData());
+
+  const getContentsData = () => {
+    if(user.length === 0) {
+      axios
+        .get('/api/menu/1')
+        .then(response => {
+          setUser(response.data);
+          
+        })
+        .catch(() => {
+          console.log('connected error');
+        })
+    }
+  }
+
   return (
     <div className={classes.root}>
         <Toolbar>
@@ -102,10 +123,8 @@ export default function PersistentDrawerLeft (props) {
         </div>
         <Divider />
         <List>
-        {getContentsData.map((data) => (
-           <Link to={data.contents_type === 1 ? "/s_001" : "/s_002"} style={{boxShadow:'none',textDecoration:'none',color:'inherit',fontFamily:'Montserrat, sans-serif'}}>
-        {/* {user.map((data) => ( */}
-           {/* <Link to={data.contents_type == 1 ? "/s_001" : "/s_002"} style={{boxShadow:'none',textDecoration:'none',color:'inherit',fontFamily:'Montserrat, sans-serif'}}>  */}
+        {user.map((data) => (
+           <Link to={data.contents_type == 1 ? "/s_001" : "/s_002"} style={{boxShadow:'none',textDecoration:'none',color:'inherit',fontFamily:'Montserrat, sans-serif'}}>
             <ListItem button key={data.contents_id}>
               <ListItemIcon>{data.contents_type == 1 ? <ImportContactsIcon /> : <CreateIcon />}</ListItemIcon>
               <ListItemText primary={data.contents_name} />

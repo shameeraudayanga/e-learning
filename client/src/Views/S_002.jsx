@@ -20,6 +20,8 @@ const S_002 = () => {
   const classes = useStyles();
   
   const [page,setPage] = useState(1);
+
+  const [correctFig, setCorrectFig] = useState(false);
   
   const current_data = getData.filter((data) => {
     return data.contents_detail_id === page;
@@ -40,26 +42,42 @@ const S_002 = () => {
   const current_choice4 = current_data.map((data) => (
     <li key={data.contents_detail_id}>{data.choice4}</li>));
   
-  return (
-    <Paper elevation={3}>
-       <div className={classes.root}>
-            {current_data.map((data) => (
-                <Question key={data.contents_detail_id} 
-                contents={data.contents_statement}
-                />
-            ))}
-      {current_data.map((data) => (
-      <Answer key={data.contents_detail_id}
-         answer={current_answer}
-         choice1={current_choice1}           
-         choice2={current_choice2}           
-         choice3={current_choice3}           
-         choice4={current_choice4}           
-      />))}
-      <Pagination count={10} Page={page} onChange={handleChange} siblingCount={3} />
-      </div>
-    </Paper>
-  );
+    const passed = () => {
+      setCorrectFig(true);
+    }
+    const faild = () => {
+       setCorrectFig(false);
+    }
+
+  if(correctFig === true && page === 10) {
+      return (
+        <div>hello</div>
+      );
+    } else {
+    return (
+      <Paper elevation={3}>
+        <div className={classes.root}>
+              {current_data.map((data) => (
+                  <Question key={data.contents_detail_id} 
+                  contents={data.contents_statement}
+                  />
+              ))}
+        {current_data.map((data) => (
+        <Answer key={data.contents_detail_id}
+          answer={current_answer}
+          choice1={current_choice1}           
+          choice2={current_choice2}           
+          choice3={current_choice3}           
+          choice4={current_choice4}     
+          passed={passed}
+          faild={faild}      
+        />))}
+        <Pagination count={10} Page={page} onChange={handleChange} siblingCount={3} />
+        </div>
+        {console.log(correctFig)}
+      </Paper>
+    );
+  }
 }
 
 export default S_002;
