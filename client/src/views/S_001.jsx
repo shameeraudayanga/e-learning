@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getData } from '../Variables/frontA';
+import { getData } from '../variables/frontA';
 import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
 // import Card from '@material-ui/core/Card';
