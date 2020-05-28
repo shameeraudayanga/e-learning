@@ -11,7 +11,7 @@ const userName = require('./Api/userName');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-const port = process.env.PORT || 4000; // port番号を指定
+const port = process.env.PORT || 8080; // port番号を指定
 
 
 // GET http://localhost:4000/api/v1/

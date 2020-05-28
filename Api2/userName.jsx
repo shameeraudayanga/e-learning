@@ -8,13 +8,20 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 exports.getData = (req, res) => {
-  const mysql = require('mysql');
+  const mysql = require('mysql-ssh');
+  const fs = require('fs');
 
-  const con = mysql.createConnection({
-    host: 'localhost',
+  const con = mysql.createConnection(
+    {
+      host: '54.250.240.189',
+      user: 'ubuntu',
+      privateKey: '../key_elearning.pem'
+    },
+    {
+    host: 'ip-172-31-46-81',
     user: 'root',
     password: '',
-    port:8080
+    database: 'e_learning'
   });
 
   con.connect((err) => {
