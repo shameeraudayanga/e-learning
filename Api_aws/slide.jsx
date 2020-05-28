@@ -15,7 +15,7 @@ exports.getData = (req,res) => {
     {
       host: '54.250.240.189',
       user: 'ubuntu',
-      privatekey: fs.readFileSync(path.resolve(__dirname,'../') + '/key_elearning.pem')
+      privateKey: fs.readFileSync(path.resolve(__dirname,'../') + '/key_elearning.pem')
     },
     {
       host: 'localhost',
@@ -25,8 +25,7 @@ exports.getData = (req,res) => {
     }
   )
   .then(client => {
-    const sql = "select * from e_learning.m_user where user_id = " + req;
-    client.querly(sql, (err,results,fields) => {
+    client.query("select * from e_learning.m_user where user_id = " + req, function (err, results, fields) {
       if(err) throw err
       console.log(results);
       res.json(results);
