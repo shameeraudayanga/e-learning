@@ -5,10 +5,10 @@ import CardMedia from '@material-ui/core/CardMedia';
 
 const useStyles = makeStyles({
   root: {
-    // maxWidth:5,
-    // minWidth:4,
-    width:500,
-    height: 400,
+    maxWidth:500,
+    minWidth:400,
+    width:50,
+    height: 40,
     // display: 'flex',
     margin:'auto',
     justifyContent: 'center',
@@ -22,10 +22,10 @@ const useStyles = makeStyles({
     
   },
   media: {
-    width:500,
-    height: 400,
-    // maxWidth:5,
-    // minWidth:4,
+    width:50,
+    height: 40,
+    maxWidth:500,
+    minWidth:400,
     margin:'auto',
     textAlign:'center',
     alignItems:'center',
