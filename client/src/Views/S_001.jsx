@@ -4,8 +4,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
-import SlideView from '../Compornent/slideView_watanabe';
+// import SlideView from '../Compornent/slideView_watanabe';
 import axios from 'axios';
+import '../Compornent/S_001_kawashima.css'
 // import { FormHelperText } from '@material-ui/core';
 
 
@@ -16,37 +17,37 @@ const useStyles = makeStyles((theme) => ({
         '& > * + *': {
             marginTop: theme.spacing(2),
         },
-        display: 'flex',
-        position: 'absolute',
+        // display: 'flex',
+        // position: 'absolute',
+        width: 'auto',
         textalign: 'center',
         marginTop:20,
-        right: '23%',
-        left: '23%',
+        right: '30%',
+        left: '30%',
         marginLeft:'auto',
         marginRight:'auto',
-        maxWidth:350,
-        minWidth:350,
-        top:550,
+        maxWidth:200,
+        minWidth:200,
+        // top:550,
     },
-    body: {
-        backgroundColor:'lightgrey',
-        padding:10,
-        width: '100%',
-        height: 'auto',
-    },
-    card: {
-        width:'auto',
-        height:550,
-        marginLeft:'auto',
-        marginRight:'auto',
-    },
-    text: {
-        width:250,
-
-        display:'block',
-        marginLeft:'20%',
-        marginTop:20,
-    }
+    // body: {
+    //     backgroundColor:'lightgrey',
+    //     padding:10,
+    //     width: '100%',
+    //     height: 'auto',
+    // },
+    // card: {
+    //     width:'auto',
+    //     height:550,
+    //     marginLeft:'auto',
+    //     marginRight:'auto',
+    // },
+    // text: {
+    //     width:250,
+    //     display:'block',
+    //     marginLeft:'20%',
+    //     marginTop:20,
+    // }
 }));
 
 const Slide = () => {
@@ -99,26 +100,30 @@ const Slide = () => {
     // } else{
     
     return (
-        <div className={classes.body}>
-            <Card className={classes.card}>
+        <div>
+            <Card className="card">
             {current_data.map((data) => (
-             <Typography className={classes.text} key={data.contents_detail_id} variant="h5" component="h2">
+             <Typography className="text"  key={data.contents_detail_id} variant="h5" component="h2">
                  <p>個人情報保護研修①</p>
                  <p>{data.contents_name}</p>
              </Typography>
              ))}  
 
-            {current_data.map((data) => (
+            {/* {current_data.map((data) => (
              <SlideView className={classes.text} key={data.contents_detail_id}>
                  contents={data.contents_name}
              </SlideView>
-             ))}  
+             ))}   */}
 
              <div className={classes.root}>
+               <Pagination count={posts.length} page={page} onChange={handleChange} />
+             </div>
+             
+             {/* <div className={classes.root}>
                <Pagination count={posts.length} page={page} onChange={handleChange} 
                passd={passed} faild={faild}/>
              </div>
-             {console.log(slidePage)}
+             {console.log(slidePage)} */}
             </Card>
         </div>
     );
