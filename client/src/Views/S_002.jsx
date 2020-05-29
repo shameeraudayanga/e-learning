@@ -1,12 +1,10 @@
-  
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Question from '../Compornent/Question';
 import Answer from '../Compornent/Answer';
 import Paper from '@material-ui/core/paper';
+import { getData } from '../Variables/frontB';
 import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
-import '../Assets/S_002.css';
-import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,25 +19,10 @@ const S_002 = () => {
   
   const [page,setPage] = useState(1);
 
-  const [posts,setPosts] = useState([]);
-
-  useEffect(() => getData());
-
-  const getData = () => {
-    if (posts.length === 0) {
-      axios
-        .get('/api/question/1')
-        .then(response => {
-          setPosts(response.data);
-          // console.log([response.data]);
-        })
-        .catch(() => {
-          console.log('connected error');
-        })
-    }
-  }
-
-  const current_data = posts.filter((data) => {
+  //正解フラグ追加
+  const [correctFlg, setCorrectFlg] = useState(false);
+  
+  const current_data = getData.filter((data) => {
     return data.contents_detail_id === page;
   });
 
@@ -58,31 +41,43 @@ const S_002 = () => {
   const current_choice4 = current_data.map((data) => (
     <li key={data.contents_detail_id}>{data.choice4}</li>));
   
-  return (
-    <body>
-    <Paper elevation={3} className="paper">
-       <div className={classes.root} >
-          {current_data.map((data) => (
-                <Question key={data.contents_detail_id} 
-                contentstext={data.contents_statement}
-                contentsquestion={data.contents_name}
-                />
-            ))}
-      {current_data.map((data) => (
-      <Answer key={data.contents_detail_id}
-         answer={current_answer}
-         choice1={current_choice1}           
-         choice2={current_choice2}           
-         choice3={current_choice3}           
-         choice4={current_choice4}           
-      />))}
-      <div className='pagination'>
-      <Pagination count={posts.length} Page={page} onChange={handleChange} siblingCount={3} />
-      </div>
-      </div>
-    </Paper>
-    </body>
-  );
+  //正解フラグの更新
+  const passed = () => {
+    setCorrectFlg(true);
+  }
+  const faild = () => {
+    setCorrectFlg(false);
+  }
+
+  if(correctFlg === true && page === 10) {
+    return (
+      <div>hello</div>
+    );
+  } else {
+    return (
+      <Paper elevation={3}>
+        <div className={classes.root}>
+              {current_data.map((data) => (
+                  <Question key={data.contents_detail_id} 
+                  contents={data.contents_statement}
+                  />
+              ))}
+        {current_data.map((data) => (
+        <Answer key={data.contents_detail_id}
+          answer={current_answer}
+          choice1={current_choice1}           
+          choice2={current_choice2}           
+          choice3={current_choice3}           
+          choice4={current_choice4} 
+          passed={passed}
+          faild={faild}          
+        />))}
+        <Pagination count={10} Page={page} onChange={handleChange} siblingCount={3} />
+        </div>
+        {console.log(correctFlg)}
+      </Paper>
+    );
+  }
 }
 
 export default S_002;
