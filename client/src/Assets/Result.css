@@ -1,0 +1,33 @@
+/* body {
+    background-color: #F2F2F2;
+    margin: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.question {
+    display: inline-block;
+    text-align: left;
+    padding: 10px 0px 50px 50px;
+}
+
+.statement {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paper {
+    border: 1px solid black;
+    height: 75vh;
+    width: 75vw;
+}
+
+.result {
+    justify-content: center;
+    display: flex;
+    position: relative;
+    height: 50px;
+    width:auto;
+} */

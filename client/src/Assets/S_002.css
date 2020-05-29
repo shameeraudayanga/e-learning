@@ -1,18 +1,22 @@
 body {
     background-color: #F2F2F2;
+    height: 100%;
+    overflow: auto;
 }
 
 .paper {
-    margin: 30px;
-    height: 800px;
-    top: 50px;
-    border: 1px solid black;
+    position: relative;
+    margin: 50px;
+    min-height: 90vh;
+    border: 1px solid black;   
 }
 
 .pagination {
-    top: 200px;
+    margin-bottom: 50px;
     position: relative;
+    bottom: 0;
     justify-content: center;
     display: flex;
     align-items: center;
+    vertical-align: bottom;
 }

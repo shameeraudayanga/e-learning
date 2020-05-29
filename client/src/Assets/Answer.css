@@ -7,9 +7,9 @@
 }
 
 .correctness {
-    top: 150px;
+    height: 80px;
     position: relative;
-    height: 100px;
+    bottom: 30px;
     text-align: center;
-    line-height: 100px;
+    line-height: 150px;
 }

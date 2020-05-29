@@ -1,0 +1,10 @@
+body {
+    background-color: #F2F2F2;
+}
+
+.paper {
+    margin: 30px;
+    height: 800px;
+    top: 50px;
+    border: 1px solid black;
+}
