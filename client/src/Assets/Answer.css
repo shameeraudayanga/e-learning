@@ -1,9 +1,15 @@
+/* .contents{
+    position: absolute;
+    margin-left: 7%;
+} */
+
 .grid {
     list-style-type: none;
 }
 
-.button {
+.selectbutton {
     text-align: right;
+    margin: 100px;
 }
 
 .correctness {

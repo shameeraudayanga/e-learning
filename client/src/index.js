@@ -9,7 +9,6 @@ import S_002 from './Views/S_002';
 import S_003 from './Views/S_003';
 import { Router } from 'react-router-dom';
 import { createBrowserHistory } from "history";
-import Result from './Compornent/Result';
 
 const hist = createBrowserHistory();
 
@@ -19,7 +18,6 @@ ReactDOM.render(
       {/* <S_001 /> */}
       <S_002 />
       {/* <S_003/> */}
-      {/* <Result /> */}
   </Router>,
   document.getElementById('root')
 )

@@ -4,19 +4,18 @@ body {
     overflow: auto;
 }
 
-.paper {
+.paper1 {
     position: relative;
     margin: 50px;
-    min-height: 90vh;
+    min-height:80vh;
     border: 1px solid black;   
 }
 
 .pagination {
-    margin-bottom: 50px;
-    position: relative;
+    margin-bottom: 30px;
+    position: absolute;
     bottom: 0;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    vertical-align: bottom;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transfor: translateX(-50%);
 }

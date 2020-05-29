@@ -70,7 +70,7 @@ const S_002 = () => {
       setCorrectFlg(false);
     }
 
-  if(correctFlg === true && page === 10){
+  if(correctFlg === true && page === 2){
     return (
       <div>
         hello
@@ -78,7 +78,7 @@ const S_002 = () => {
     );
   } else {
   return (
-    <Paper elevation={3} className='paper'>
+    <Paper elevation={3} className='paper1'>
        <div className={classes.root} >
             {current_data.map((data) => (
                 <Question key={data.contents_detail_id} 
