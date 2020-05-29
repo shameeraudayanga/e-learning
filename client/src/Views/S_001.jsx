@@ -79,28 +79,37 @@ const Slide = () => {
         return data.contents_detail_id === page;
     });
 
-    return (
-        <div className='body'>
-            <Card className='card'>
-
-                {current_data.map((data) => (
-                    <Typography className='text' variant="h5" component="h2"
-                        key={data.contents_detail_id}
-                    >
-                        <p>個人情報保護研修①</p>
-                        <p>{data.contents_detail_id}</p>
-                        <p>{data.contents_name}</p>
-                        <p>{data.contents_statement}</p>
-                        <p>{data.contents_type}</p>
-                    </Typography>
-                ))}
-
-                <div>
-                    <Pagination className='pagition' count={slide.length} page={page} onChange={handleChange} />
-                </div>
-            </Card>
-        </div>
-    );
+    if(page === slide.length + 1){
+        return(
+            <Typography className='text' variant="h5" component="h2">
+                終わり！
+            </Typography>
+        )
+    }
+    else{
+        return (
+            <div className='body'>
+                <Card className='card'>
+    
+                    {current_data.map((data) => (
+                        <Typography className='text' variant="h5" component="h2"
+                            key={data.contents_detail_id}
+                        >
+                            <p>個人情報保護研修①</p>
+                            <p>{data.contents_detail_id}</p>
+                            <p>{data.contents_name}</p>
+                            <p>{data.contents_statement}</p>
+                            <p>{data.contents_type}</p>
+                        </Typography>
+                    ))}
+    
+                    <div>
+                        <Pagination className='pagition' count={slide.length+1} page={page} onChange={handleChange} />
+                    </div>
+                </Card>
+            </div>
+        );
+    } 
 }
 
 export default Slide;
