@@ -5,6 +5,7 @@ import Pagination from '@material-ui/lab/Pagination';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 import SlideView from '../Compornent/slideView_watanabe';
+import '../Css/S_001.css';
 
 import axios from 'axios';
 import {useEffect} from 'react';
@@ -26,24 +27,24 @@ const useStyles = makeStyles((theme) => ({
         minWidth:350,
         margin:20,
     },
-    body: {
-        backgroundColor:'lightgrey',
-        // backgroundColor: '#f2f2f2',
-        padding:15,
-        width:'auto',
-        height:'70%',
-        margin:0,
-        // bottom:0,
-    },
-    card: {
-        width:'auto',
-        height:'100%',
-        // paddingTop:'25%',
-        // marginLeft:'auto',
-        // marginRight:'auto',
-        // margin:'5%',
-        // bottom:10,
-    },
+    // body: {
+    //     backgroundColor:'lightgrey',
+    //     // backgroundColor: '#f2f2f2',
+    //     padding:15,
+    //     width:'auto',
+    //     height:'70%',
+    //     margin:0,
+    //     // bottom:0,
+    // },
+    // card: {
+    //     width:'auto',
+    //     height:'100%',
+    //     // paddingTop:'25%',
+    //     // marginLeft:'auto',
+    //     // marginRight:'auto',
+    //     // margin:'5%',
+    //     // bottom:10,
+    // },
     text: {
         width:250,
         height:30,
