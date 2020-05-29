@@ -10,10 +10,10 @@ import Card from '@material-ui/core/Card';
 // import Button from '@material-ui/core/Button';
 // import Typography from '@material-ui/core/Typography';
 // import CardGwey from '../Compornent/CardGwey';
-import axios from 'axios'
+import axios from 'axios';
 import Typography from '@material-ui/core/Typography';
 //import SlideView from '../Compornent/slideView_watanabe';
-
+import '../Css/S_001.css';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -24,34 +24,23 @@ const useStyles = makeStyles((theme) => ({
         textalign: 'center',
         marginTop: 20,
         right: '23%',
-        left: '23%',
+        left: '30%',
         marginLeft: 'auto',
         marginRight: 'auto',
         maxWidth: 350,
         minWidth: 350,
-        top: 550,
+        top: 500,
         position: "absolute",
         display: "flex",
     },
-    body: {
-        backgroundColor: 'lightgrey',
-        // backgroundColor: '#f2f2f2',
-        padding: 16,
-    },
-    card: {
-        width: 'auto',
-        height: 550,
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        // bottom:10,
-    },
-    text: {
-        width: 250,
-        height: 30,
-        display: 'block',
-        marginLeft: '20%',
-        marginTop: 20,
-    }
+   
+    // text: {
+    //     width: 250,
+    //     height: 30,
+    //     display: 'block',
+    //     marginLeft: '20%',
+    //     marginTop: 20,
+    // }
 }));
 
 const Slide = () => {
@@ -91,11 +80,11 @@ const Slide = () => {
     });
 
     return (
-        <div className={classes.body}>
-            <Card className={classes.card}>
+        <div className='body'>
+            <Card className='card'>
 
                 {current_data.map((data) => (
-                    <Typography className={classes.text} variant="h5" component="h2"
+                    <Typography className='text' variant="h5" component="h2"
                         key={data.contents_detail_id}
                     >
                         <p>個人情報保護研修①</p>
