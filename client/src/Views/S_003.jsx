@@ -18,22 +18,22 @@ const S_003 = () => {
       .then(response =>{
         setPosts(response.data);
         console.log([response.data]);
-      })
+    })
       .catch(() => {
         console.log('connected error');
       })
   }
-}
+　}
 
 const current_data = posts.filter((data) => {
-    return data.contents_detail_id});
+    return data.contents_detail_id === 1});
 
     return(
         <body className="body">
         <Paper　className="paper">
           <div className="registration"> 
           {current_data.map((data) => (
-                <Answerjudge key={data.contents_detail_id} 
+                <Answerjudge  key={data.contents_detail_id}
                 contentsname={data.contents_name}
                 />
             ))}

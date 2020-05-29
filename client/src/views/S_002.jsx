@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
 import '../Assets/S_002.css';
 import axios from 'axios';
+import S_003 from './S_003';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,6 +22,8 @@ const S_002 = () => {
   const [page,setPage] = useState(1);
 
   const [posts,setPosts] = useState([]);
+
+  const [correctFlg, setCorrectFlg] = useState(false);
 
   useEffect(() => getData());
 
@@ -57,6 +60,19 @@ const S_002 = () => {
   const current_choice4 = current_data.map((data) => (
     <li key={data.contents_detail_id}>{data.choice4}</li>));
   
+  const passed = () => {
+    setCorrectFlg(true);
+  }
+  const faild = () => {
+    setCorrectFlg(false);
+  }
+  
+  if(correctFlg === true && page === posts.length + 1) {
+    return (
+      <S_003 />
+    );
+  } else {
+
   return (
     <body>
     <Paper elevation={3} className="paper">
@@ -73,15 +89,17 @@ const S_002 = () => {
          choice1={current_choice1}           
          choice2={current_choice2}           
          choice3={current_choice3}           
-         choice4={current_choice4}           
+         choice4={current_choice4}
+         passed={passed}
+         faild={faild}               
       />))}
       <div className='pagination'>
-      <Pagination count={posts.length} Page={page} onChange={handleChange} siblingCount={3} />
+      <Pagination count={posts.length + 1} Page={page} onChange={handleChange} siblingCount={3} />
       </div>
       </div>
     </Paper>
     </body>
   );
-}
+}}
 
 export default S_002;
