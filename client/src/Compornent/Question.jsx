@@ -1,10 +1,13 @@
 import React from 'react';
 
 const Question = (props) => {
+
+
+
     return(
         <div className="Question">
-            <h1>{props.contentsquestion}</h1>
-            {props.contentstext}
+            <h1>{props.contentsname}</h1>
+            {props.contents}
         </div>
     );
 }

@@ -5,6 +5,7 @@ import Paper from '@material-ui/core/paper';
 import { getData } from '../Variables/frontB';
 import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
+import S_003 from '../Views/S_003';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,7 +20,6 @@ const S_002 = () => {
   
   const [page,setPage] = useState(1);
 
-  //正解フラグ追加
   const [correctFlg, setCorrectFlg] = useState(false);
   
   const current_data = getData.filter((data) => {
@@ -41,7 +41,6 @@ const S_002 = () => {
   const current_choice4 = current_data.map((data) => (
     <li key={data.contents_detail_id}>{data.choice4}</li>));
   
-  //正解フラグの更新
   const passed = () => {
     setCorrectFlg(true);
   }
@@ -51,7 +50,9 @@ const S_002 = () => {
 
   if(correctFlg === true && page === 10) {
     return (
-      <div>hello</div>
+      <div>
+      <S_003 />
+      </div>
     );
   } else {
     return (
@@ -60,6 +61,7 @@ const S_002 = () => {
               {current_data.map((data) => (
                   <Question key={data.contents_detail_id} 
                   contents={data.contents_statement}
+                  contentsname={data.contents_name}
                   />
               ))}
         {current_data.map((data) => (

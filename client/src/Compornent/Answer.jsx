@@ -39,6 +39,5 @@ const Answer = (props) => {
     </div>
   );
 } 
-
 Answer.propTypes = propTypes;
 export default Answer;

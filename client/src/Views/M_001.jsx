@@ -24,9 +24,9 @@ const M_001 = () => {
     return (
         <div className="M_001">
             <Sidebar />
-            {user.map((M_User) => (
-            <Header key={M_User.user_id} 
-            contents={M_User.user_name} />  
+            {user.map((data) => (
+            <Header key={data.user_id} 
+            contents={data.user_name} />  
             ))}
         </div>
     );

@@ -28,6 +28,9 @@ const S_003 = () => {
 const current_data = posts.filter((data) => {
     return data.contents_detail_id});
 
+// const Answerjudge = (props) => {
+// const S_003 = (props) => {
+
     return(
         <body className="body">
         <Paper　className="paper">
@@ -38,8 +41,10 @@ const current_data = posts.filter((data) => {
                 />
             ))} */}
             <Answerjudge />
+            {/* <h1>{props.contentsname}</h1> */}
           </div> 
           <div className="content">
+          {/* <h1>{props.contentsname}</h1> */}
             <p>全ての問題に正解しました。</p>
             <p>この内容を登録しますか？</p>
             <Grid　className="button"><Button variant="contained">登録する</Button></Grid>
@@ -50,4 +55,5 @@ const current_data = posts.filter((data) => {
       }
 
 
+// export default Answerjudge;
 export default S_003;
