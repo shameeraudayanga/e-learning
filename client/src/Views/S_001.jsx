@@ -21,17 +21,17 @@ const useStyles = makeStyles((theme) => ({
         '& > * + *': {
             marginTop: theme.spacing(2),
         },
-        textalign: 'center',
-        marginTop: 20,
-        right: '23%',
-        left: '30%',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        maxWidth: 350,
-        minWidth: 350,
-        top: 500,
-        position: "absolute",
-        display: "flex",
+        // textalign: 'center',
+        // marginTop: 20,
+        // right: '23%',
+        // left: '30%',
+        // marginLeft: 'auto',
+        // marginRight: 'auto',
+        // maxWidth: 350,
+        // minWidth: 350,
+        // top: 500,
+        // position: "absolute",
+        // display: "flex",
     },
    
     // text: {
@@ -95,8 +95,8 @@ const Slide = () => {
                     </Typography>
                 ))}
 
-                <div className={classes.root}>
-                    <Pagination count={slide.length} page={page} onChange={handleChange} />
+                <div>
+                    <Pagination className='pagition' count={slide.length} page={page} onChange={handleChange} />
                 </div>
             </Card>
         </div>

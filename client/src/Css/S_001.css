@@ -18,10 +18,20 @@ body {
 }
 
 .text {
-    width: 250;
+    /* width: 250;
     height: 30;
     display: block;
     margin-Left: 50%;
-    margin-Top: 20;
+    margin-Top: 20; */
     text-align: center;
+}
+
+.pagition{
+    margin-bottom: 50px;
+    position: relative;
+    bottom: 0;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    vertical-align: bottom;
 }
