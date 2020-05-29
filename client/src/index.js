@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import M_001 from './Views/M_001';
 import S_001 from './Views/S_001';
 import S_002 from './Views/S_002';
+import S_003 from './Views/S_003';
 import {Router} from 'react-router-dom';
 import {createBrowserHistory} from "history";
 // import * as serviceWorker from './serviceWorker';
@@ -17,6 +18,7 @@ ReactDOM.render(
     <M_001 />
     {/* <S_001 /> */}
     <S_002 />
+    {/* <S_003 /> */}
   </Router>,
   document.getElementById('root')
 )

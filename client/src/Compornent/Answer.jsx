@@ -3,6 +3,13 @@ import Button from '@material-ui/core/Button';
 import { Grid } from '@material-ui/core';
 import '../Assets/Answer.css'
 
+import PropTypes from 'prop-types';
+
+const propTypes ={
+  passed: PropTypes.func,
+  faild: PropTypes.func,
+};
+
 const Answer = (props) => {  
   
   const [correctness, setCorrectness] = useState("");
@@ -36,4 +43,5 @@ const Answer = (props) => {
   );
 }
 
+Answer.propTypes =propTypes;
 export default Answer;
