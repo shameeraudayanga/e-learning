@@ -1,13 +1,21 @@
+/* .contents{
+    position: absolute;
+    margin-left: 7%;
+} */
+
 .grid {
     list-style-type: none;
 }
 
-.button {
+.selectbutton {
     text-align: right;
+    margin: 100px;
 }
 
 .correctness {
-    height: 100px;
+    height: 80px;
+    position: relative;
+    bottom: 30px;
     text-align: center;
-    line-height: 100px;
+    line-height: 150px;
 }

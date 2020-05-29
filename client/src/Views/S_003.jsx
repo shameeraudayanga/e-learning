@@ -30,7 +30,7 @@ const current_data = posts.filter((data) => {
 
     return(
         <body className="body">
-        <Paper　className="paper">
+        <Paper　className="paper2">
           <div className="registration"> 
           {current_data.map((data) => (
                 <Answerjudge  key={data.contents_detail_id}

@@ -1,11 +1,13 @@
 body {
     background-color: #F2F2F2;
+    height: 100%;
+    overflow: auto;
 }
 
-.paper {
-    margin: 30px;
-    height: 85vh;
-    top: 50px;
+.paper2 {
+    position: relative;
+    margin: 50px;
+    min-height: 80vh;
     border: 1px solid black;
 }
 

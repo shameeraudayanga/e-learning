@@ -75,13 +75,13 @@ const S_002 = () => {
 
   return (
     <body>
-    <Paper elevation={3} className="paper">
+    <Paper elevation={3} className="paper1">
        <div className={classes.root} >
             {current_data.map((data) => (
                 <Question key={data.contents_detail_id} 
                 contentstext={data.contents_statement}
                 contentsquestion={data.contents_name}
-                />
+              />
             ))}
       {current_data.map((data) => (
       <Answer key={data.contents_detail_id}
@@ -97,6 +97,8 @@ const S_002 = () => {
       <Pagination count={posts.length + 1} Page={page} onChange={handleChange} siblingCount={3} />
       </div>
       </div>
+      <Pagination className='pagination' count={posts.length + 1} Page={page} onChange={handleChange} siblingCount={3} />
+      {console.log(correctFlg)}
     </Paper>
     </body>
   );

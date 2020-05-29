@@ -40,13 +40,13 @@ const Answer = (props) => {
   return (
     <div>
       <Grid className="grid" container spacing={5}>
-        <Grid className="button" item xs={6}>
+        <Grid className="selectbutton" item xs={6}>
           <Button className={classes.choice} onClick={() => handleClick(1)}>{props.choice1}</Button>
         </Grid>
         <Grid item xs={6}>
           <Button className={classes.choice} onClick={() => handleClick(2)}>{props.choice2}</Button>
         </Grid>
-        <Grid className="button" item xs={6}>
+        <Grid className="selectbutton" item xs={6}>
           <Button className={classes.choice} onClick={() => handleClick(3)}>{props.choice3}</Button>
         </Grid>
         <Grid item xs={6}>
